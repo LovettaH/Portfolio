@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重訓習慣研究 · Chao Huang</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1a1a1a;--ink2:#555;--ink3:#999;--bg:#fff;--bg2:#f8f8f8;--border:#e8e8e8;--border2:#d0d0d0;--teal:#0D7377;--teal2:#14A085;--blue:#185FA5}
+@media(prefers-color-scheme:dark){:root{--ink:#f0f0f0;--ink2:#aaa;--ink3:#666;--bg:#1a1a1a;--bg2:#242424;--border:#333;--border2:#444;--teal:#14A085;--teal2:#5DCAA5;--blue:#378ADD}}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 40px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+@media(prefers-color-scheme:dark){nav{background:rgba(26,26,26,0.92)}}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:16px;color:var(--ink);text-decoration:none}
+.nav-back{font-size:13px;color:var(--ink3);text-decoration:none}
+.nav-back:hover{color:var(--ink)}
+.wrap{max-width:720px;margin:0 auto;padding:96px 40px 80px}
+.hero-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.hero-title{font-family:'DM Serif Display',serif;font-size:42px;line-height:1.1;margin-bottom:20px}
+.hero-sub{font-size:16px;color:var(--ink2);line-height:1.75;max-width:560px;margin-bottom:40px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:56px}
+.stat{background:var(--bg2);border-radius:8px;padding:20px;text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:32px;color:var(--ink);margin-bottom:4px}
+.stat-label{font-size:12px;color:var(--ink3)}
+.finding{padding-top:40px;margin-top:40px;border-top:1px solid var(--border)}
+.finding-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.finding-title{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:12px}
+.finding-body{font-size:14px;color:var(--ink2);line-height:1.8;margin-bottom:24px;max-width:580px}
+.chart-wrap{background:var(--bg2);border-radius:10px;padding:20px;margin-bottom:16px}
+.chart-label{font-size:12px;color:var(--ink3);margin-bottom:16px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.card{border:1px solid var(--border);border-radius:10px;padding:18px;background:var(--bg)}
+.card-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.card-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.card-body{font-size:13px;color:var(--ink2);line-height:1.65}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tag{font-size:11px;padding:4px 12px;border:1px solid var(--border2);border-radius:20px;color:var(--ink3)}
+.quotes{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.quote{border-left:2px solid var(--border2);padding:12px 16px;border-radius:0 8px 8px 0;background:var(--bg2)}
+.quote-text{font-size:14px;color:var(--ink);line-height:1.7;margin-bottom:6px}
+.quote-attr{font-size:12px;color:var(--ink3)}
+.stop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.stop-card{background:var(--bg2);border-radius:8px;padding:14px;text-align:center}
+.stop-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px}
+.stop-sub{font-size:11px;color:var(--ink3)}
+.implication{background:var(--bg2);border-radius:10px;padding:24px;margin-bottom:16px;border:1px solid var(--border)}
+.impl-num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal2);margin-bottom:8px}
+.impl-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.impl-body{font-size:13px;color:var(--ink2);line-height:1.75}
+.impl-body strong{color:var(--ink);font-weight:500}
+.highlight-box{border-left:2px solid var(--teal);padding:16px 20px;border-radius:0 8px 8px 0;background:var(--bg);margin:16px 0;border-radius:0}
+.highlight-box p{font-size:14px;color:var(--ink2);line-height:1.7}
+.highlight-box strong{color:var(--ink)}
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.action-card{border:1px solid var(--border);border-radius:10px;padding:18px;background:var(--bg)}
+.action-icon{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.action-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.action-body{font-size:13px;color:var(--ink2);line-height:1.65}
+.note{background:var(--bg2);border-radius:10px;padding:20px;margin-top:48px}
+.note p{font-size:13px;color:var(--ink3);line-height:1.6}
+.note strong{color:var(--ink2);font-weight:500}
+footer{padding:24px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:720px;margin:0 auto}
+footer span{font-size:12px;color:var(--ink3)}
+footer a{font-size:12px;color:var(--ink3);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:600px){nav{padding:14px 20px}.wrap{padding:80px 20px 60px}.hero-title{font-size:28px}.stats,.two-col,.action-grid,.stop-grid{grid-template-columns:1fr}footer{padding:20px;flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Chao</a>
+  <a class="nav-back" href="index.html#cs2">← Case Study 02</a>
+</nav>
+
+<div class="wrap">
+
+  <p class="hero-label">重訓習慣研究 · 2025 · N=30</p>
+  <h1 class="hero-title">重訓者，不是不練了。<br>是進化了。</h1>
+  <p class="hero-sub">我們調查了30位來自台灣各地的重訓者，發現「停止重訓」幾乎是個假命題。他們不是放棄，而是讓運動成為了更大生活的一部分。這個發現，改變了我們對健身房留客問題的理解方式。</p>
+
+  <div class="stats">
+    <div class="stat"><p class="stat-num">30</p><p class="stat-label">位受訪者</p></div>
+    <div class="stat"><p class="stat-num">7+</p><p class="stat-label">個城市</p></div>
+    <div class="stat"><p class="stat-num">4</p><p class="stat-label">個開放式問題</p></div>
+  </div>
+
+  <div class="finding">
+    <p class="finding-label">核心發現 01</p>
+    <h2 class="finding-title">絕大多數人持續在動，只是方式變了</h2>
+    <p class="finding-body">「停止重訓」幾乎不存在。受訪者要嘛繼續重訓，要嘛在重訓的基礎上擴展到其他運動。重訓是起點，不是終點。</p>
+    <div class="chart-wrap">
+      <p class="chart-label">重訓後，還在做哪些運動？（提及率估算，複選）</p>
+      <div style="position:relative;height:280px">
+        <canvas id="sportsChart" role="img" aria-label="重訓者同時從事的運動種類">跑步、瑜伽、騎車等</canvas>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">跑步 / 慢跑</span><span class="tag">瑜伽</span><span class="tag">皮拉提斯</span>
+      <span class="tag">騎車</span><span class="tag">舞蹈</span><span class="tag">滑雪</span>
+      <span class="tag">游泳</span><span class="tag">格鬥技</span><span class="tag">有氧課程</span>
+    </div>
+  </div>
+
+  <div class="finding">
+    <p class="finding-label">核心發現 02</p>
+    <h2 class="finding-title">身體的改變，開啟更積極的生活</h2>
+    <p class="finding-body">持續重訓最強的動力是「身體更有能力應付生活」，不只是外表。這種能力感才是真正的留存動力。</p>
+    <div class="chart-wrap">
+      <p class="chart-label">持續重訓的主要原因（提及率估算）</p>
+      <div style="position:relative;height:260px">
+        <canvas id="motivationChart" role="img" aria-label="持續重訓的主要原因">維持健康、身體功能、心理健康等</canvas>
+      </div>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p class="quote-text">「重訓讓我開始注意各方面的狀態，覺得人真的變得更有力量，不用以身體健康為理由放棄去玩。」</p>
+        <p class="quote-attr">台北 · 40-49歲</p>
+      </div>
+      <div class="quote">
+        <p class="quote-text">「Long-term health and strength keep me going. Work-related travel sometimes stops me from going.」</p>
+        <p class="quote-attr">台南 · 50-59歲</p>
+      </div>
+      <div class="quote">
+        <p class="quote-text">「身體更健康、心態更正面，體態更好有幹勁。」</p>
+        <p class="quote-attr">台南 · 30-39歲</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <p class="finding-label">核心發現 03</p>
+    <h2 class="finding-title">重訓改變的不只是體態</h2>
+    <p class="finding-body">開始重訓後，受訪者的生活出現了各種連鎖改變——飲食、服裝、其他運動習慣，甚至對自身的看法。</p>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">改變最多的面向</p>
+        <p class="card-title">飲食習慣</p>
+        <p class="card-body">注意蛋白質攝取、減少加工食品、飲食更有意識。許多人開始補充營養品。</p>
+      </div>
+      <div class="card">
+        <p class="card-label">意外的改變</p>
+        <p class="card-title">服裝與自信</p>
+        <p class="card-body">買了運動服、更注重外表，對自己的身體感覺更好。「潮亮運動服！！！（很重要）」</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <p class="finding-label">核心發現 04</p>
+    <h2 class="finding-title">阻力通常是外部的，不是內心放棄</h2>
+    <p class="finding-body">停止重訓的原因大多是工作太忙、時間不夠、受傷，而不是「不想練了」。大多數流失的會員，其實還有回來的意願。</p>
+    <div class="stop-grid">
+      <div class="stop-card"><p class="stop-title">工作太忙</p><p class="stop-sub">時間壓力</p></div>
+      <div class="stop-card"><p class="stop-title">受傷 / 痠痛</p><p class="stop-sub">身體因素</p></div>
+      <div class="stop-card"><p class="stop-title">心情 / 壓力</p><p class="stop-sub">情緒狀態</p></div>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p class="quote-text">「工作太忙或是心情低落時想要翹課。」</p>
+        <p class="quote-attr">新北 · 30-39歲</p>
+      </div>
+      <div class="quote">
+        <p class="quote-text">「沒有，因為我擠不出時間@@」</p>
+        <p class="quote-attr">台北 · 40-49歲</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <p class="finding-label">對健身房的意義</p>
+    <h2 class="finding-title">這些發現，如何幫助健身房留住會員？</h2>
+    <p class="finding-body">這份研究的目的不只是了解重訓者，而是找出健身房可以用什麼方式，在正確的時機，用正確的語言，幫助會員撐過外部阻力、繼續回來。</p>
+
+    <div class="highlight-box">
+      <p>核心洞察：<strong>大多數「流失」的會員不是真的放棄，而是被外部因素打斷了。</strong>健身房的留客策略，應該從「吸引回來」轉向「幫助他們不要中斷」。</p>
+    </div>
+
+    <div class="implication">
+      <p class="impl-num">01</p>
+      <p class="impl-title">重新定義流失的訊號</p>
+      <p class="impl-body">會員兩週沒來，不一定是要放棄了——可能只是工作很忙。<strong>健身房需要的不是流失後的挽回，而是中斷前的預警。</strong>識別每個會員的高風險期（如工作旺季、連假前後），提前做溫暖接觸，而不是等消失了才發優惠券。</p>
+    </div>
+
+    <div class="implication">
+      <p class="impl-num">02</p>
+      <p class="impl-title">用能力感而非體態來溝通</p>
+      <p class="impl-body">研究顯示，持續重訓最強的動力是「身體更有能力應付生活」。<strong>健身房的回訪提醒，應該強調進步感而非外貌。</strong></p>
+      <div class="action-grid">
+        <div class="action-card">
+          <p class="action-icon">不建議</p>
+          <p class="action-title">「夏天快到了，練起來！」</p>
+          <p class="action-body">外貌導向，不是真實的持續動力來源。</p>
+        </div>
+        <div class="action-card">
+          <p class="action-icon">建議</p>
+          <p class="action-title">「上次你深蹲了80公斤。」</p>
+          <p class="action-body">能力感導向，呼應研究發現，讓會員感受到具體進步。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="implication">
+      <p class="impl-num">03</p>
+      <p class="impl-title">不要對獨行俠推銷社交</p>
+      <p class="impl-body">部分重訓者明確表示喜歡獨自訓練——快進快出，專注效率。<strong>對這類會員推銷找訓練夥伴或小班課，不但無效，還可能讓他們感到被打擾。</strong>留客策略必須根據會員類型做差異化。</p>
+    </div>
+
+    <div class="implication">
+      <p class="impl-num">04</p>
+      <p class="impl-title">把重訓定位為更大生活的入口</p>
+      <p class="impl-body">很多人從重訓出發，進而嘗試更多挑戰。<strong>健身房可以把自己定位為這個旅程的起點，而不只是一個有器材的空間。</strong>「這能幫你做到更多事」比「這能讓你更好看」更能觸動真實動機。</p>
+    </div>
+
+    <div class="implication">
+      <p class="impl-num">05</p>
+      <p class="impl-title">資料整合才能真正看見會員</p>
+      <p class="impl-body">要做到以上四點，光靠健身器材的使用紀錄是不夠的。健身房需要結合<strong>到館頻率、課程參與、訓練歷程</strong>等多種資料，才能識別每個會員的類型和當下狀態。這正是 iOGYM 正在探索的產品方向。</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><strong>資料說明：</strong>本研究為質化與量化混合研究，共30位受訪者，涵蓋台灣北中南各城市，年齡分佈20-59歲。圖表數據為研究者根據開放式回答進行編碼後的估算值，完整統計數據將於2025年5月補充更新。</p>
+  </div>
+
+</div>
+
+<footer>
+  <span>© Chao Huang 黃雅超 · 2026</span>
+  <a href="index.html">← 回到作品集</a>
+</footer>
+
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const textColor = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.45)';
+const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.05)';
+
+new Chart(document.getElementById('sportsChart'), {
+  type: 'bar',
+  data: {
+    labels: ['跑步 / 慢跑','瑜伽','騎車','皮拉提斯','舞蹈','游泳','其他有氧','格鬥技'],
+    datasets: [{ data: [38,25,20,18,15,12,22,10], backgroundColor: isDark ? '#5DCAA5' : '#1D9E75', borderRadius: 3, borderSkipped: false }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + Math.round(ctx.parsed.x) + '%' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' }, max: 50 },
+      y: { grid: { display: false }, ticks: { color: textColor, font: { size: 12 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('motivationChart'), {
+  type: 'bar',
+  data: {
+    labels: ['維持健康體能','身體功能改善','心理健康','挑戰自我','外表 / 體態','社交 / 夥伴'],
+    datasets: [{ data: [72,65,48,42,35,20], backgroundColor: isDark ? '#378ADD' : '#185FA5', borderRadius: 3, borderSkipped: false }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + Math.round(ctx.parsed.x) + '%' } } },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' }, max: 90 },
+      y: { grid: { display: false }, ticks: { color: textColor, font: { size: 12 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>

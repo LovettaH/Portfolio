@@ -36,6 +36,10 @@ body.zh [data-zh]{display:block}
 body.zh span[data-zh]{display:inline}
 body.zh span[data-en]{display:none}
 span[data-zh]{display:none}
+.meta > span span[data-en]{display:inline}
+.meta > span span[data-zh]{display:none}
+body.zh .meta > span span[data-en]{display:none}
+body.zh .meta > span span[data-zh]{display:inline}
 
 /* ── PAGES ── */
 .page{display:none;padding-top:72px;min-height:100vh}
@@ -105,7 +109,7 @@ span[data-zh]{display:none}
 .cs-desc{font-size:15px;color:var(--ink2);line-height:1.75;max-width:540px;margin-bottom:32px}
 .meta-row{display:flex;gap:40px;flex-wrap:wrap}
 .meta{font-size:13px}
-.meta span{display:block;color:var(--ink3);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.meta > span:not([data-en]):not([data-zh]){display:block;color:var(--ink3);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
 .cs-section{padding:40px 40px 0;max-width:860px}
 .cs-section-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
 .callout{background:var(--bg2);border-left:2px solid var(--ink);padding:20px 24px;margin:16px 0;border-radius:0 6px 6px 0}
@@ -204,8 +208,8 @@ footer span{font-size:12px;color:var(--ink3)}
       <span data-zh>將複雜的問題<br>轉化為<em>簡單</em>的產品。</span>
     </h1>
     <p class="hero-sub">
-      <span data-en>15 years bridging hardware and software — from factory floors to fitness apps. I find what users actually need, not what they say they need.</span>
-      <span data-zh>15年橫跨硬體與軟體的經驗——從工廠現場到健身應用程式。我找出使用者真正需要的，而不只是他們說想要的。</span>
+      <span data-en>15 years bridging hardware and software, from factory floors to fitness apps. I find what users actually need, not what they say they need.</span>
+      <span data-zh>15年橫跨硬體與軟體的經驗，從代工廠到健身房應用軟體。我找出使用者真正需要的，而不只是他們說想要的。</span>
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
       <button class="btn" onclick="goto('work')">
@@ -255,8 +259,8 @@ footer span{font-size:12px;color:var(--ink3)}
         </div>
         <div class="wc-bottom">
           <p class="wc-title">
-            <span data-en>Why users left — it wasn't the sensors</span>
-            <span data-zh>為什麼用戶離開——不是感應器的問題</span>
+            <span data-en>Why users left. It wasn't the sensors</span>
+            <span data-zh>為什麼用戶離開。不是感應器的問題</span>
           </p>
           <span class="wc-tag">Case Study 01</span>
         </div>
@@ -317,8 +321,8 @@ footer span{font-size:12px;color:var(--ink3)}
     <p class="about-label"><span data-en>About</span><span data-zh>關於我</span></p>
     <h1 class="about-title"><span data-en>Hi, I'm Chao 👋</span><span data-zh>你好，我是雅超 👋</span></h1>
     <p class="about-body">
-      <span data-en>PM and UX Researcher based in Tainan, Taiwan. <strong>15+ years bridging hardware and software</strong> — from factory floors at Pegatron and ASUS, to client operations at iCHEF, to product and UX work at iOGYM.</span>
-      <span data-zh>專案經理暨使用者研究員，現居台灣台南。<strong>15年以上橫跨硬體與軟體的工作經驗</strong>——從和碩、華碩的工廠現場，到iCHEF的客戶營運，再到iOGYM的產品與UX工作。</span>
+      <span data-en>PM and UX Researcher based in Tainan, Taiwan. <strong>15+ years bridging hardware and software</strong>, from Pegatron and ASUS to iCHEF and iOGYM.</span>
+      <span data-zh>專案經理暨使用者研究員，現居台灣台南。<strong>15年以上橫跨硬體與軟體的工作經驗</strong>，歷經和碩、華碩、iCHEF，到iOGYM的產品與UX工作。</span>
     </p>
     <p class="about-body">
       <span data-en>I care most about the moment when research reveals something everyone assumed was wrong. That's where the real work begins.</span>
@@ -397,8 +401,8 @@ footer span{font-size:12px;color:var(--ink3)}
   <div class="cs-hero">
     <p class="cs-num">Case Study 01 · iOGYM · 2024–Now</p>
     <h1 class="cs-title">
-      <span data-en>Why users left — it wasn't the sensors.</span>
-      <span data-zh>為什麼用戶離開——不是感應器的問題。</span>
+      <span data-en>Why users left. It wasn't the sensors.</span>
+      <span data-zh>為什麼用戶離開。不是感應器的問題。</span>
     </h1>
     <p class="cs-desc">
       <span data-en>When everyone assumed users left because sensors were inaccurate, user research revealed a completely different culprit: the app was just too troublesome to use mid-workout.</span>
@@ -418,8 +422,8 @@ footer span{font-size:12px;color:var(--ink3)}
       <div class="card">
         <p class="card-label"><span data-en>What everyone assumed</span><span data-zh>大家原本的假設</span></p>
         <p class="card-content">
-          <span data-en>Sensor data was inaccurate — users couldn't trust the equipment readings, so they stopped using the app. Development effort was focused on improving hardware precision.</span>
-          <span data-zh>感應器數據不準確——用戶不信任設備讀數，所以停止使用應用程式。開發資源集中在改善硬體精度上。</span>
+          <span data-en>Sensor data was inaccurate. Users couldn't trust the equipment readings, so they stopped using the app. Development effort was focused on improving hardware precision.</span>
+          <span data-zh>感應器數據不準確，用戶不信任設備讀數，進而停止使用應用程式。開發資源集中在改善硬體精度上。</span>
         </p>
       </div>
       <div class="card accent">
@@ -432,8 +436,8 @@ footer span{font-size:12px;color:var(--ink3)}
     </div>
     <div class="callout">
       <p>
-        <span data-en><em>"I have to open the app, scan, select the exercise, go to rest and then adjust my figures — reps and sets... it's just too much."</em> — gym user interview</span>
-        <span data-zh><em>「我必須開啟app、掃描、選擇動作、去休息，然後再回來調整次數和組數……真的太麻煩了。」</em> — 健身房用戶訪談</span>
+        <span data-en><em>"I have to open the app, scan, select the exercise, go to rest and then adjust my figures, reps and sets... it's just too much."</em>, from a user interview</span>
+        <span data-zh><em>「我必須開啟app、掃描、選擇動作、去休息，然後再回來調整次數和組數……真的太麻煩了。」</em>，用戶訪談</span>
       </p>
     </div>
   </div>
@@ -457,11 +461,11 @@ footer span{font-size:12px;color:var(--ink3)}
     <div class="insight-row">
       <div class="insight">
         <p class="insight-num">01</p>
-        <p class="insight-label"><span data-en>Friction in the workout flow was the #1 churn driver — not sensor accuracy</span><span data-zh>訓練流程中的摩擦感才是流失的主因——不是感應器精度</span></p>
+        <p class="insight-label"><span data-en>Friction in the workout flow was the #1 churn driver. Not sensor accuracy.</span><span data-zh>訓練流程中的摩擦感才是流失的主因，而非感應器精度。</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">02</p>
-        <p class="insight-label"><span data-en>Users wanted the app to remember them — previous weights, last reps, last exercise</span><span data-zh>用戶希望app能記住他們——上次的重量、次數、動作</span></p>
+        <p class="insight-label"><span data-en>Users wanted the app to remember their previous weights, reps, and exercises</span><span data-zh>用戶希望app能記住上次的重量、次數與動作</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">03</p>
@@ -476,12 +480,12 @@ footer span{font-size:12px;color:var(--ink3)}
       <div class="card">
         <p class="card-label"><span data-en>Immediate fixes</span><span data-zh>立即改善</span></p>
         <p class="card-content">
-          <span data-en>Auto-remember previous weight inputs. Add encouragement messages post-workout — "you lifted 5kg more than last time." Weekly and monthly progress reports.</span>
-          <span data-zh>自動記住上次輸入的重量。訓練後加入鼓勵訊息——「你這次比上次多舉了5公斤」。每週和每月進度報告。</span>
+          <span data-en>Auto-remember previous weight inputs. Add encouragement messages post-workout: "you lifted 5kg more than last time." Weekly and monthly progress reports.</span>
+          <span data-zh>自動記住上次輸入的重量。訓練後加入鼓勵訊息，例如「你這次比上次多舉了5公斤」。每週和每月進度報告。</span>
         </p>
       </div>
       <div class="card teal">
-        <p class="card-label"><span data-en>Future vision — NFC flow</span><span data-zh>未來願景——NFC流程</span></p>
+        <p class="card-label"><span data-en>Future vision: NFC flow</span><span data-zh>未來願景：NFC流程</span></p>
         <p class="card-content">
           <span data-en>Phone rack with NFC: user places phone on rack → workout starts automatically → adjust reps during rest. Zero friction entry point.</span>
           <span data-zh>NFC手機架：用戶將手機放上架子 → app自動開啟並開始記錄 → 休息時調整次數。零摩擦的訓練入口。</span>
@@ -499,15 +503,15 @@ footer span{font-size:12px;color:var(--ink3)}
       </div>
     </div>
     <div class="img-slot"><p><span data-en>[ Insert: NFC flow diagram vs current QR flow ]</span><span data-zh>[ 插入：NFC流程圖 vs 現有QR流程 ]</span></p></div>
-    <div class="img-slot"><p><span data-en>[ Insert: Figma screens — encouragement UI, weight memory feature ]</span><span data-zh>[ 插入：Figma畫面——鼓勵介面、重量記憶功能 ]</span></p></div>
+    <div class="img-slot"><p><span data-en>[ Insert: Figma screens: encouragement UI, weight memory feature ]</span><span data-zh>[ 插入：Figma畫面：鼓勵介面、重量記憶功能 ]</span></p></div>
   </div>
 
   <div class="cs-section">
     <p class="cs-section-title"><span data-en>Reflection</span><span data-zh>反思</span></p>
     <div class="reflection">
       <p>
-        <span data-en>The biggest lesson was learning to separate the assumed problem from the real one. Stakeholders were convinced the sensors were the issue — but going directly to users revealed the friction was in the journey, not the data. Working within a donor-driven product environment also taught me how to advocate for user needs within real organisational constraints.</span>
-        <span data-zh>最大的收穫是學會區分假設的問題和真實的問題。利害關係人深信感應器是問題所在——但直接訪談用戶後，發現摩擦感來自於使用流程，而非數據本身。在捐助者主導的產品環境中工作，也讓我學會如何在真實的組織限制中為用戶需求發聲。</span>
+        <span data-en>The biggest lesson was learning to separate the assumed problem from the real one. Stakeholders were convinced the sensors were the issue. Going directly to users revealed the friction was in the journey, not the data. Working within a donor-driven product environment also taught me how to advocate for user needs within real organisational constraints.</span>
+        <span data-zh>最大的收穫是學會區分假設的問題和真實的問題。利害關係人深信感應器是問題所在。但直接訪談用戶後，發現摩擦感來自使用流程，而非數據本身。在捐助者主導的產品環境中工作，也讓我學會如何在真實的組織限制中為用戶需求發聲。</span>
       </p>
     </div>
     <div class="tag-row">
@@ -542,8 +546,8 @@ footer span{font-size:12px;color:var(--ink3)}
       <span data-zh>健身房真正需要的資料洞察是什麼？</span>
     </h1>
     <p class="cs-desc">
-      <span data-en>iOGYM sells to gyms, not individual users. So the real question isn't "why do users churn" — it's "what data can help gyms prevent churn before it happens?"</span>
-      <span data-zh>iOGYM的客戶是健身房，不是個別使用者。所以真正的問題不是「為什麼用戶流失」——而是「什麼數據能幫助健身房在流失發生前預防它？」</span>
+      <span data-en>iOGYM sells to gyms, not individual users. The real question is not "why do users churn" but "what data can help gyms prevent churn before it happens?"</span>
+      <span data-zh>iOGYM的客戶是健身房，不是個別使用者。真正的問題不是「為什麼用戶流失」，而是「什麼數據能幫助健身房在流失發生前預防它？」</span>
     </p>
     <div class="meta-row">
       <div class="meta"><span><span data-en>Role</span><span data-zh>職責</span></span><span data-en>Product Research · Strategy</span><span data-zh>產品研究 · 策略</span></div>
@@ -557,18 +561,18 @@ footer span{font-size:12px;color:var(--ink3)}
     <p class="cs-section-title"><span data-en>The real customer problem</span><span data-zh>真正的客戶問題</span></p>
     <div class="callout teal">
       <p>
-        <span data-en>iOGYM's real customer is the <em>gym</em>, not the individual member. But our product was designed around individual tracking. This misalignment meant gyms couldn't see the value — because we weren't solving their actual problem: <em>member retention.</em></span>
-        <span data-zh>iOGYM真正的客戶是<em>健身房</em>，不是個別會員。但我們的產品是圍繞個人追蹤設計的。這個錯位意味著健身房看不到價值——因為我們沒有解決他們真正的問題：<em>會員留存率。</em></span>
+        <span data-en>iOGYM's real customer is the <em>gym</em>, not the individual member. But our product was designed around individual tracking. This misalignment meant gyms couldn't see the value. We weren't solving their actual problem: <em>member retention.</em></span>
+        <span data-zh>iOGYM真正的客戶是<em>健身房</em>，不是個別會員。但我們的產品是圍繞個人追蹤設計的。這個錯位意味著健身房看不到價值，因為我們沒有解決他們真正的問題：<em>會員留存率。</em></span>
       </p>
     </div>
     <div class="two-col">
       <div class="card">
         <p class="card-label"><span data-en>Who pays us</span><span data-zh>誰付費給我們</span></p>
-        <p class="card-content"><span data-en>The gym — our B2B customer</span><span data-zh>健身房——我們的B2B客戶</span></p>
+        <p class="card-content"><span data-en>The gym: our B2B customer</span><span data-zh>健身房，也就是我們的B2B客戶</span></p>
       </div>
       <div class="card accent">
         <p class="card-label"><span data-en>Who we were designing for</span><span data-zh>我們在為誰設計</span></p>
-        <p class="card-content"><span data-en>The individual gym member — the end user</span><span data-zh>個別健身房會員——終端使用者</span></p>
+        <p class="card-content"><span data-en>The individual gym member, the end user</span><span data-zh>個別健身房會員，也就是終端使用者</span></p>
       </div>
     </div>
   </div>
@@ -578,15 +582,15 @@ footer span{font-size:12px;color:var(--ink3)}
     <div class="insight-row">
       <div class="insight">
         <p class="insight-num">01</p>
-        <p class="insight-label"><span data-en>Physical results unlock a bigger life — members stay when they feel capable and see progress</span><span data-zh>身體上的成果開啟更積極的生活——當會員感受到能力提升並看見進步時，他們就會留下來</span></p>
+        <p class="insight-label"><span data-en>Physical results unlock a bigger life. Members stay when they feel capable and see progress.</span><span data-zh>身體上的成果開啟更積極的生活。當會員感受到能力提升並看見進步，他們就會留下來。</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">02</p>
-        <p class="insight-label"><span data-en>Most members continue exercising after stopping weight training — they transition, not quit</span><span data-zh>大多數會員停止重訓後仍繼續運動——他們是轉換，不是放棄</span></p>
+        <p class="insight-label"><span data-en>Most members continue exercising after stopping weight training. They transition, not quit.</span><span data-zh>大多數會員停止重訓後仍繼續運動。他們是轉換，不是放棄。</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">03</p>
-        <p class="insight-label"><span data-en>The "lone wolf" lifter trains solo by choice — pushing social connection would feel wrong</span><span data-zh>「獨行俠」型重訓者選擇獨自訓練——推銷社交連結會適得其反</span></p>
+        <p class="insight-label"><span data-en>The "lone wolf" lifter trains solo by choice. Pushing social connection would feel wrong.</span><span data-zh>「獨行俠」型重訓者選擇獨自訓練。推銷社交連結只會適得其反。</span></p>
       </div>
     </div>
     <div class="img-slot"><p><span data-en>[ Insert: questionnaire data / response summary ]</span><span data-zh>[ 插入：問卷數據 / 回覆摘要 ]</span></p></div>
@@ -616,7 +620,7 @@ footer span{font-size:12px;color:var(--ink3)}
     <div class="two-col">
       <div class="card accent">
         <p class="card-label"><span data-en>Early warning dashboard</span><span data-zh>預警儀表板</span></p>
-        <p class="card-content"><span data-en>Show gyms which members are at risk of churning — and what type of intervention each one needs before they disappear.</span><span data-zh>向健身房展示哪些會員有流失風險——以及在他們消失前，每位會員需要什麼樣的介入方式。</span></p>
+        <p class="card-content"><span data-en>Show gyms which members are at risk of churning, and suggest what type of intervention fits each one.</span><span data-zh>向健身房展示哪些會員有流失風險，並建議每位會員適合的介入方式。</span></p>
       </div>
       <div class="card accent">
         <p class="card-label"><span data-en>Configurable platform</span><span data-zh>可客製化平台</span></p>
@@ -629,8 +633,8 @@ footer span{font-size:12px;color:var(--ink3)}
     <p class="cs-section-title"><span data-en>Reflection</span><span data-zh>反思</span></p>
     <div class="reflection">
       <p>
-        <span data-en>This research reframed the entire product strategy — from "track individual exercise data accurately" to "help gyms understand and retain their members." The most important insight was knowing when NOT to intervene: pushing social connection on a lone wolf lifter would create a worse experience than no intervention at all.</span>
-        <span data-zh>這項研究重新定義了整體產品策略——從「準確追蹤個人運動數據」到「幫助健身房了解並留住會員」。最重要的洞察是知道何時不應該介入：對喜歡獨自訓練的重訓者推銷社交連結，反而會造成比不介入更差的體驗。</span>
+        <span data-en>This research reframed the entire product strategy: from tracking exercise data to helping gyms understand and retain their members. The most important insight was knowing when NOT to intervene. Pushing social connection on a lone wolf lifter creates a worse experience than no intervention at all.</span>
+        <span data-zh>這項研究重新定義了整體產品策略，從追蹤運動數據出發，轉向幫助健身房了解並留住會員。最重要的洞察是知道何時不應該介入。對喜歡獨自訓練的重訓者推銷社交連結，反而造成比不介入更差的體驗。</span>
       </p>
     </div>
     <div class="tag-row">
@@ -638,6 +642,26 @@ footer span{font-size:12px;color:var(--ink3)}
       <span class="tag"><span data-en>Product strategy</span><span data-zh>產品策略</span></span>
       <span class="tag"><span data-en>Retention design</span><span data-zh>留存設計</span></span>
       <span class="tag"><span data-en>Service design</span><span data-zh>服務設計</span></span>
+    </div>
+  </div>
+
+  <div class="cs-section" style="margin-top:40px">
+    <p class="cs-section-title"><span data-en>Primary research</span><span data-zh>原始研究資料</span></p>
+    <div style="border:1px solid var(--border);border-radius:10px;padding:24px;background:var(--bg2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+      <div>
+        <p style="font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px">
+          <span data-en>Weightlifting habits research report</span>
+          <span data-zh>重訓習慣研究報告</span>
+        </p>
+        <p style="font-size:13px;color:var(--ink2);line-height:1.6;max-width:420px">
+          <span data-en>30 respondents across Taiwan. Findings on motivation, lifestyle changes, and what actually keeps people training.</span>
+          <span data-zh>30位台灣受訪者。關於訓練動機、生活改變，以及什麼真正讓人持續下去的研究發現。</span>
+        </p>
+      </div>
+      <a href="research.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;border-radius:2px;text-decoration:none;white-space:nowrap;flex-shrink:0">
+        <span data-en>View research →</span>
+        <span data-zh>查看研究報告 →</span>
+      </a>
     </div>
   </div>
 
@@ -664,8 +688,8 @@ footer span{font-size:12px;color:var(--ink3)}
       <span data-zh>讓複雜的健身數據變得易懂。</span>
     </h1>
     <p class="cs-desc">
-      <span data-en>Designing weekly and monthly training reports for a dark-mode fitness app — translating multi-dimensional performance data into clean, motivating visuals.</span>
-      <span data-zh>為深色模式的健身應用程式設計每週和每月訓練報告——將多維度的表現數據轉化為清晰、激勵人心的視覺呈現。</span>
+      <span data-en>Designing weekly and monthly training reports for a dark-mode fitness app. Translating multi-dimensional performance data into clean, motivating visuals.</span>
+      <span data-zh>為深色模式的健身應用程式設計每週和每月訓練報告，將多維度的表現數據轉化為清晰、激勵人心的視覺呈現。</span>
     </p>
     <div class="meta-row">
       <div class="meta"><span><span data-en>Role</span><span data-zh>職責</span></span><span data-en>UX · Visual Design</span><span data-zh>UX · 視覺設計</span></div>
@@ -679,15 +703,15 @@ footer span{font-size:12px;color:var(--ink3)}
     <div class="insight-row">
       <div class="insight">
         <p class="insight-num">01</p>
-        <p class="insight-label"><span data-en>Non-judgmental — data shows progress without making users feel bad about gaps or missed sessions</span><span data-zh>不批判性——數據展示進步，而不讓用戶對間隔或缺席感到難受</span></p>
+        <p class="insight-label"><span data-en>Non-judgmental: data shows progress without making users feel bad about gaps or missed sessions</span><span data-zh>不批判性：數據展示進步，而不讓用戶對缺席感到難受</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">02</p>
-        <p class="insight-label"><span data-en>Dark mode first — gym environment, low light, glare reduction on phone screens</span><span data-zh>深色模式優先——健身房環境、低光照、減少手機螢幕眩光</span></p>
+        <p class="insight-label"><span data-en>Dark mode first: gym environment, low light, glare reduction on phone screens</span><span data-zh>深色模式優先：健身房環境光線低，需減少螢幕眩光</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">03</p>
-        <p class="insight-label"><span data-en>Familiar patterns — iPhone Health-inspired layouts reduce cognitive load for new users</span><span data-zh>熟悉的設計模式——參考iPhone健康應用的版面，降低新用戶的認知負擔</span></p>
+        <p class="insight-label"><span data-en>Familiar patterns: iPhone Health-inspired layouts reduce cognitive load for new users</span><span data-zh>熟悉的設計模式：參考iPhone健康應用的版面，降低新用戶的認知負擔</span></p>
       </div>
     </div>
   </div>
@@ -702,7 +726,7 @@ footer span{font-size:12px;color:var(--ink3)}
       </div>
       <div class="card">
         <p class="card-label"><span data-en>Design decision</span><span data-zh>設計決策</span></p>
-        <p class="card-content"><span data-en>Encouragement copy over raw numbers — "You lifted 5kg more than last time" rather than just showing the delta</span><span data-zh>鼓勵性文案而非純數字——「你這次比上次多舉了5公斤」，而不只是顯示數值差異</span></p>
+        <p class="card-content"><span data-en>Encouragement copy over raw numbers. "You lifted 5kg more than last time" rather than just showing the delta.</span><span data-zh>鼓勵性文案而非純數字。「你這次比上次多舉了5公斤」，而不只是顯示數值差異。</span></p>
       </div>
     </div>
   </div>
@@ -758,8 +782,8 @@ footer span{font-size:12px;color:var(--ink3)}
     <p class="about-label"><span data-en>Contact</span><span data-zh>聯絡</span></p>
     <h1 class="contact-title"><span data-en>Let's work together.</span><span data-zh>歡迎與我合作。</span></h1>
     <p class="contact-sub">
-      <span data-en>I'm currently open to international-facing PM and UX roles based in Tainan or remote. Feel free to reach out — I respond to all messages.</span>
-      <span data-zh>目前積極尋找台南或遠端的國際化PM與UX職位。歡迎聯繫——我會回覆所有訊息。</span>
+      <span data-en>I'm currently open to international-facing PM and UX roles based in Tainan or remote. Feel free to reach out. I respond to all messages.</span>
+      <span data-zh>目前積極尋找台南或遠端的國際化PM與UX職位。歡迎聯繫，我會回覆所有訊息。</span>
     </p>
     <div class="contact-links">
       <a href="mailto:dunnoyy@gmail.com" class="contact-link">
