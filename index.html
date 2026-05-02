@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chao Huang — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a1a1a;line-height:1.6}
+.tabs{display:flex;gap:1px;background:#e5e5e5;border-bottom:1px solid #e5e5e5;position:sticky;top:0;z-index:10}
+.tab{flex:1;padding:14px 16px;font-size:12px;cursor:pointer;background:#f5f5f5;color:#888;text-align:center;letter-spacing:0.3px;transition:all 0.15s}
+.tab.active{background:#fff;color:#1a1a1a;font-weight:500}
+.page{display:none;padding-bottom:64px}
+.page.active{display:block}
+.hero{padding:48px 40px 36px;border-bottom:1px solid #ebebeb}
+.case-num{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-bottom:14px}
+.case-title{font-family:'DM Serif Display',serif;font-size:38px;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;max-width:580px}
+.case-desc{font-size:14px;color:#666;line-height:1.75;max-width:520px;margin-bottom:28px}
+.meta-row{display:flex;gap:40px;flex-wrap:wrap}
+.meta{font-size:13px}
+.meta span{display:block;color:#aaa;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.section{padding:32px 40px 0}
+.section-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #ebebeb}
+.callout{background:#f8f8f8;border-left:2px solid #1a1a1a;padding:18px 22px;margin:16px 0;border-radius:0 8px 8px 0}
+.callout p{font-size:14px;line-height:1.65;color:#1a1a1a}
+.callout em{font-style:normal;font-weight:500}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.card{background:#f8f8f8;border-radius:10px;padding:20px;border:1px solid #ebebeb}
+.card-label{font-size:10px;color:#aaa;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:8px}
+.card-content{font-size:13px;color:#333;line-height:1.65}
+.card.accent{border-left:2px solid #1a1a1a}
+.flow{display:flex;align-items:center;gap:8px;margin:16px 0;flex-wrap:wrap}
+.flow-step{background:#f8f8f8;border:1px solid #ddd;border-radius:8px;padding:8px 14px;font-size:12px;color:#333}
+.flow-step.highlight{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.flow-arrow{color:#bbb;font-size:14px}
+.insight-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+.insight{border:1px solid #ebebeb;border-radius:10px;padding:18px}
+.insight-num{font-family:'DM Serif Display',serif;font-size:30px;margin-bottom:6px}
+.insight-label{font-size:12px;color:#666;line-height:1.6}
+.img-placeholder{background:#f8f8f8;border:1px dashed #ddd;border-radius:10px;height:160px;display:flex;align-items:center;justify-content:center;margin:16px 0}
+.img-placeholder p{font-size:12px;color:#bbb;letter-spacing:0.3px}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.tag{font-size:11px;padding:4px 12px;border:1px solid #e0e0e0;border-radius:20px;color:#888}
+.reflection{background:#f8f8f8;border-radius:10px;padding:24px;margin:16px 0}
+.reflection p{font-size:13px;color:#666;line-height:1.75}
+.nav-footer{display:flex;justify-content:space-between;padding:28px 40px;border-top:1px solid #ebebeb;margin-top:40px}
+.nav-footer a{font-size:12px;color:#888;text-decoration:none}
+.nav-footer a:hover{color:#1a1a1a}
+@media(max-width:600px){
+  .two-col,.insight-row{grid-template-columns:1fr}
+  .hero{padding:32px 20px 24px}
+  .section{padding:24px 20px 0}
+  .case-title{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <div class="tab active" onclick="show(0)">Case 01 · UX Flow</div>
+  <div class="tab" onclick="show(1)">Case 02 · Retention</div>
+  <div class="tab" onclick="show(2)">Visual · Reports</div>
+</div>
+
+<!-- CASE 01 -->
+<div class="page active" id="p0">
+  <div class="hero">
+    <p class="case-num">Case Study 01 · iOGYM 2024–Now</p>
+    <h1 class="case-title">Fixing the wrong problem — and finding the right one</h1>
+    <p class="case-desc">When everyone assumed users left because sensors were inaccurate, user research revealed a different culprit entirely: the app was just too troublesome to use.</p>
+    <div class="meta-row">
+      <div class="meta"><span>Role</span>UX Research · Product Manager</div>
+      <div class="meta"><span>Methods</span>User interviews · Flow analysis</div>
+      <div class="meta"><span>Outcome</span>Redirected dev priorities</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">The problem</p>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">Assumed cause</p>
+        <p class="card-content">Sensor data was inaccurate — users couldn't trust the equipment readings, so they stopped using the app.</p>
+      </div>
+      <div class="card accent">
+        <p class="card-label">Real cause (discovered)</p>
+        <p class="card-content">The app flow was too cumbersome. Users had to open app → scan QR → select exercise → go rest → manually adjust reps and sets every single time.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p><em>"I have to open the app, scan, select exercise, go to rest and adjust my figures... it's just too much."</em> — gym user interview</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Research process</p>
+    <div class="flow">
+      <div class="flow-step">Define assumptions</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step highlight">Interview gym coaches + users</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Map user flow pain points</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Identify real churn driver</div>
+    </div>
+    <div class="img-placeholder"><p>[ Insert: interview notes / affinity map ]</p></div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Key insights</p>
+    <div class="insight-row">
+      <div class="insight">
+        <p class="insight-num">01</p>
+        <p class="insight-label">Friction in the workout flow was the #1 churn driver — not data accuracy</p>
+      </div>
+      <div class="insight">
+        <p class="insight-num">02</p>
+        <p class="insight-label">Users wanted the app to remember them — previous weights, last reps</p>
+      </div>
+      <div class="insight">
+        <p class="insight-num">03</p>
+        <p class="insight-label">Encouragement and progress feedback increased motivation to return</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Design decisions</p>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">Short term fix</p>
+        <p class="card-content">Auto-remember previous weight inputs. Add encouragement messages. Show "you lifted more than last time" feedback after each session.</p>
+      </div>
+      <div class="card accent">
+        <p class="card-label">Future vision — NFC flow</p>
+        <p class="card-content">Phone rack with NFC: user places phone → workout starts automatically → adjust reps during rest. Zero friction entry point.</p>
+      </div>
+    </div>
+    <div class="img-placeholder"><p>[ Insert: NFC flow diagram vs current QR flow ]</p></div>
+    <div class="img-placeholder"><p>[ Insert: Figma screens — encouragement UI, weight memory feature ]</p></div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Reflection</p>
+    <div class="reflection">
+      <p>The biggest lesson was learning to separate the assumed problem from the real one. Stakeholders were convinced the sensors were the issue — but going directly to users revealed the friction was in the journey, not the data. Working within a donor-driven product environment also taught me how to advocate for user needs within real organisational constraints.</p>
+    </div>
+    <div class="tag-row">
+      <span class="tag">User research</span>
+      <span class="tag">Flow redesign</span>
+      <span class="tag">IoT UX</span>
+      <span class="tag">Stakeholder management</span>
+    </div>
+  </div>
+  <div class="nav-footer">
+    <a href="#">← Back to all work</a>
+    <a href="#" onclick="show(1);return false">Next: Retention Research →</a>
+  </div>
+</div>
+
+<!-- CASE 02 -->
+<div class="page" id="p1">
+  <div class="hero">
+    <p class="case-num">Case Study 02 · iOGYM B2B Research</p>
+    <h1 class="case-title">What keeps gym members coming back?</h1>
+    <p class="case-desc">iOGYM sells to gyms, not individual users. So the real question isn't "why do users churn" — it's "what data can help gyms prevent it before it happens?"</p>
+    <div class="meta-row">
+      <div class="meta"><span>Role</span>Product Research · Strategy</div>
+      <div class="meta"><span>Methods</span>Questionnaire · Branding framework</div>
+      <div class="meta"><span>Status</span>In progress</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Why this research matters</p>
+    <div class="callout">
+      <p>iOGYM's real customer is the <em>gym</em>, not the individual member. But our product was designed around individual tracking. This misalignment meant gyms couldn't see the value — because we weren't solving their actual problem: member retention.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Research questions</p>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">For gym members</p>
+        <p class="card-content">What motivates you to keep coming back? Is it the trainer, your friends, the environment, the classes?</p>
+      </div>
+      <div class="card">
+        <p class="card-label">For gyms</p>
+        <p class="card-content">What data would help you identify members at risk of cancelling — before they actually do?</p>
+      </div>
+    </div>
+    <div class="img-placeholder"><p>[ Insert: questionnaire results / survey data from branding course ]</p></div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Early insights</p>
+    <div class="insight-row">
+      <div class="insight">
+        <p class="insight-num">01</p>
+        <p class="insight-label">Social circle and workout buddies are the strongest long-term retention driver</p>
+      </div>
+      <div class="insight">
+        <p class="insight-num">02</p>
+        <p class="insight-label">Different member types need different interventions — one size doesn't fit all</p>
+      </div>
+      <div class="insight">
+        <p class="insight-num">03</p>
+        <p class="insight-label">Gyms need early warning signals, not just historical usage data</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Proposed product direction</p>
+    <div class="two-col">
+      <div class="card accent">
+        <p class="card-label">Member tagging system</p>
+        <p class="card-content">Tag members by type: needs social connection, needs trainer guidance, needs class variety, needs nutrition support.</p>
+      </div>
+      <div class="card accent">
+        <p class="card-label">Early warning dashboard</p>
+        <p class="card-content">Show gyms which members haven't visited recently, and suggest what type of outreach fits their profile.</p>
+      </div>
+    </div>
+    <div class="img-placeholder"><p>[ Insert: proposed dashboard wireframe ]</p></div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Reflection</p>
+    <div class="reflection">
+      <p>This research reframed the entire product strategy — from "track individual exercise data accurately" to "help gyms understand and retain their members." The shift from B2C thinking to genuine B2B product thinking was the most important strategic insight from two years at iOGYM.</p>
+    </div>
+    <div class="tag-row">
+      <span class="tag">B2B research</span>
+      <span class="tag">Product strategy</span>
+      <span class="tag">Retention design</span>
+      <span class="tag">Service design</span>
+    </div>
+  </div>
+  <div class="nav-footer">
+    <a href="#" onclick="show(0);return false">← Case 01: UX Flow</a>
+    <a href="#" onclick="show(2);return false">Next: Visual Design →</a>
+  </div>
+</div>
+
+<!-- VISUAL -->
+<div class="page" id="p2">
+  <div class="hero">
+    <p class="case-num">Visual Design · iOGYM 2024–Now</p>
+    <h1 class="case-title">Making complex fitness data feel simple</h1>
+    <p class="case-desc">Designing weekly and monthly training reports for a dark-mode fitness app — translating multi-dimensional performance data into clean, motivating visuals.</p>
+    <div class="meta-row">
+      <div class="meta"><span>Role</span>UX · Visual Design</div>
+      <div class="meta"><span>Tools</span>Figma</div>
+      <div class="meta"><span>Context</span>IoT fitness app, dark mode</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Design principles</p>
+    <div class="insight-row">
+      <div class="insight">
+        <p class="insight-num">01</p>
+        <p class="insight-label">Non-judgmental — data shows progress without making users feel bad about gaps</p>
+      </div>
+      <div class="insight">
+        <p class="insight-num">02</p>
+        <p class="insight-label">Dark mode first — gym environment, low light, glare reduction</p>
+      </div>
+      <div class="insight">
+        <p class="insight-num">03</p>
+        <p class="insight-label">Zero border radius — clean, sharp, serious. Inspired by iPhone Health app patterns</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Weekly report</p>
+    <div class="img-placeholder"><p>[ Insert: weekly report Figma screens ]</p></div>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">What it shows</p>
+        <p class="card-content">Total volume, exercise PRs, sessions completed, muscle group breakdown per week</p>
+      </div>
+      <div class="card">
+        <p class="card-label">Design decision</p>
+        <p class="card-content">Familiar iPhone Health-style patterns reduce learning curve — users already know how to read this kind of data</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Monthly report</p>
+    <div class="img-placeholder"><p>[ Insert: monthly report Figma screens ]</p></div>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">What it shows</p>
+        <p class="card-content">Month-over-month comparison, consistency score, personal records, progress encouragement</p>
+      </div>
+      <div class="card">
+        <p class="card-label">Design decision</p>
+        <p class="card-content">Encouragement language over raw numbers — celebrates consistency and effort, not just peak performance</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Reflection</p>
+    <div class="reflection">
+      <p>The challenge was designing for data that was sometimes unreliable — sensors weren't always accurate, so the UI needed to present numbers with appropriate context rather than false precision. This taught me that good data visualization isn't just about aesthetics: it's about honest communication with the user, especially when the underlying data has limitations.</p>
+    </div>
+    <div class="tag-row">
+      <span class="tag">Data visualization</span>
+      <span class="tag">Dark mode UI</span>
+      <span class="tag">Figma</span>
+      <span class="tag">Mobile design</span>
+    </div>
+  </div>
+  <div class="nav-footer">
+    <a href="#" onclick="show(1);return false">← Case 02: Retention</a>
+    <a href="#">Back to all work →</a>
+  </div>
+</div>
+
+<script>
+function show(i){
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.page').forEach((p,j)=>p.classList.toggle('active',i===j));
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
