@@ -178,6 +178,15 @@ footer span{font-size:12px;color:var(--ink3)}
   .cs-nav{padding:24px 20px}
   footer{padding:20px;flex-direction:column;gap:12px;text-align:center}
 }
+
+/* ── RESEARCH MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);animation:fadeIn 0.2s ease}
+.modal-overlay.active{display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.modal-box{background:var(--bg);width:100%;max-width:720px;border-radius:12px;position:relative;padding:48px 40px 60px;margin:auto}
+.modal-close{position:sticky;top:0;float:right;margin:-8px -8px 16px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--ink2);line-height:1;z-index:10}
+.modal-close:hover{background:var(--bg3);color:var(--ink)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){.modal-overlay{padding:0}.modal-box{border-radius:0;min-height:100vh;padding:40px 20px 60px}}
 </style>
 </head>
 <body>
@@ -437,8 +446,8 @@ footer span{font-size:12px;color:var(--ink3)}
     </div>
     <div class="callout">
       <p>
-        <span data-en><em>"I have to open the app, scan, select the exercise, go to rest and then adjust my figures, reps and sets... it's just too much."</em>, from a user interview</span>
-        <span data-zh><em>「我必須開啟app、掃描、選擇動作、去休息，然後再回來調整次數和組數……真的太麻煩了。」</em>，用戶訪談</span>
+        <span data-en><em>"The main reason users don't continue using the app is friction. Every time you have to scan, every time selecting an exercise takes too long, every time you have to remember your last weight... it's not the inaccurate reps that's driving people away."</em> — research synthesis, April 2024</span>
+        <span data-zh><em>「使用者沒有持續使用的主要原因是：麻煩。每次都要掃描、每次選動作都很久、每次都要回想自己上次的重量⋯⋯而非表象的次數不準造成使用者沒有繼續使用下去。」</em> — 研究綜合結論，2024年4月</span>
       </p>
     </div>
   </div>
@@ -446,15 +455,61 @@ footer span{font-size:12px;color:var(--ink3)}
   <div class="cs-section">
     <p class="cs-section-title"><span data-en>Research process</span><span data-zh>研究過程</span></p>
     <div class="flow">
-      <div class="flow-step"><span data-en>Define assumptions</span><span data-zh>定義假設</span></div>
+      <div class="flow-step"><span data-en>App questionnaire</span><span data-zh>APP問卷調查</span></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step hi"><span data-en>Interview coaches + users</span><span data-zh>訪談教練與用戶</span></div>
+      <div class="flow-step hi"><span data-en>Coach + user interviews</span><span data-zh>教練與用戶訪談</span></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><span data-en>Map flow pain points</span><span data-zh>繪製流程痛點</span></div>
+      <div class="flow-step"><span data-en>Gym usability visits</span><span data-zh>健身房易用性觀察</span></div>
       <div class="flow-arrow">→</div>
-      <div class="flow-step"><span data-en>Identify real churn driver</span><span data-zh>找出真實流失原因</span></div>
+      <div class="flow-step"><span data-en>Synthesise findings</span><span data-zh>綜合研究結論</span></div>
     </div>
-    <div class="img-slot"><p><span data-en>[ Insert: interview notes / affinity map ]</span><span data-zh>[ 插入：訪談筆記 / 親和圖 ]</span></p></div>
+    <p style="font-size:13px;color:var(--ink2);line-height:1.75;margin:16px 0">
+      <span data-en>The questionnaire ran April 1–24, collecting 10+ new records that month. Interviews were conducted with coaches (Anita, Jackie, Oscar) and competitive athletes. Key observation: most users never looked at the screen mid-workout — they pocketed their phone and only checked it during rest breaks.</span>
+      <span data-zh>問卷調查從4月1日至24日進行，當月新增10筆以上紀錄。訪談對象包含教練（Anita、Jackie、Oscar）和競賽選手。關鍵觀察：大部分使用者在運動時都不會看螢幕——他們把手機放進口袋，只在組間休息時才拿出來看。</span>
+    </p>
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label"><span data-en>Survey — friction findings</span><span data-zh>問卷——操作摩擦力</span></p>
+        <p class="card-content">
+          <span data-en>"Too many exercises to choose from" and "no tutorial." StepX coaches said the repeated manual adjustments made them not want to keep using it.</span>
+          <span data-zh>「選擇動作太多不好挑選」和「沒有教學」。StepX教練大多反應因為麻煩（需要反覆調整）而不想持續使用。</span>
+        </p>
+      </div>
+      <div class="card">
+        <p class="card-label"><span data-en>Internal team feedback</span><span data-zh>內部同仁回饋</span></p>
+        <p class="card-content">
+          <span data-en>"We're not used to staring at our phones during training, and we want to adjust the app as little as possible."</span>
+          <span data-zh>「大多都是沒有盯著手機看得習慣，並且希望越少去調整app越好。」</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <p class="cs-section-title"><span data-en>What coaches told us</span><span data-zh>教練怎麼說</span></p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="callout">
+        <p>
+          <span data-en><em>"I'm used to recording in Excel. The app feels cumbersome. Nike Run Club starts with one tap — that simplicity matters a lot to me."</em></span>
+          <span data-zh><em>「我習慣用Excel做重訓紀錄，覺得我們的APP有點麻煩。我有使用Nike Run Club做紀錄，覺得方便對我來說很重要，因為按一個鍵就可以開始了。」</em></span>
+        </p>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px"><span data-en>Jackie, coach</span><span data-zh>Jackie，教練</span></p>
+      </div>
+      <div class="callout">
+        <p>
+          <span data-en><em>"It's very annoying to re-select exercises every time. Why can't I just tap from my history and start training?"</em></span>
+          <span data-zh><em>「每次都要重新選擇很麻煩，為什麼不能從歷史資料點擊後就可以開始練。」</em></span>
+        </p>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px"><span data-en>Oscar, coach</span><span data-zh>Oscar，教練</span></p>
+      </div>
+      <div class="callout">
+        <p>
+          <span data-en><em>During a gym usability visit, Dellan immediately turned his phone face-down and put it in his pocket. Asin kept the phone to the side and only picked it up during rest breaks.</em></span>
+          <span data-zh><em>走健身易用性調查時，Dellan直接把手機螢幕關掉放進口袋。阿信也是把手機擺在一旁，組間休息時再拿起來看。</em></span>
+        </p>
+        <p style="font-size:12px;color:var(--ink3);margin-top:8px"><span data-en>Gym usability observation</span><span data-zh>健身房易用性觀察</span></p>
+      </div>
+    </div>
   </div>
 
   <div class="cs-section">
@@ -466,12 +521,19 @@ footer span{font-size:12px;color:var(--ink3)}
       </div>
       <div class="insight">
         <p class="insight-num">02</p>
-        <p class="insight-label"><span data-en>Users wanted the app to remember their previous weights, reps, and exercises</span><span data-zh>用戶希望app能記住上次的重量、次數與動作</span></p>
+        <p class="insight-label"><span data-en>Users don't look at their phones mid-workout. The app needs to work without constant interaction.</span><span data-zh>使用者在訓練中不會看螢幕。App需要在無需持續互動的情況下運作。</span></p>
       </div>
       <div class="insight">
         <p class="insight-num">03</p>
-        <p class="insight-label"><span data-en>Encouragement and progress feedback increased motivation to return</span><span data-zh>鼓勵訊息和進度回饋能提升用戶回訪動機</span></p>
+        <p class="insight-label"><span data-en>Users wanted the app to remember their previous weights and exercises. Starting from scratch every time was the dealbreaker.</span><span data-zh>用戶希望app能記住上次的重量與動作。每次從頭開始是最大的使用障礙。</span></p>
       </div>
+    </div>
+    <div style="background:var(--bg2);border-radius:8px;padding:20px;margin-top:16px;border-left:2px solid var(--ink)">
+      <p style="font-size:12px;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px"><span data-en>Finding validated internally</span><span data-zh>內部驗證</span></p>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75">
+        <span data-en>After sharing the synthesis with the team, Tony (a newly hired colleague) confirmed the same finding independently — users consistently cited friction and cumbersome flow, not inaccuracy, as their reason for stopping.</span>
+        <span data-zh>將研究綜合結論分享給團隊後，新同事Tony也獨立驗證了相同的發現——用戶一致表示因為流程麻煩而停止使用，而非數據不準確。</span>
+      </p>
     </div>
   </div>
 
@@ -479,17 +541,17 @@ footer span{font-size:12px;color:var(--ink3)}
     <p class="cs-section-title"><span data-en>Design decisions</span><span data-zh>設計決策</span></p>
     <div class="two-col">
       <div class="card">
-        <p class="card-label"><span data-en>Immediate fixes</span><span data-zh>立即改善</span></p>
+        <p class="card-label"><span data-en>Immediate priorities</span><span data-zh>立即執行項目</span></p>
         <p class="card-content">
-          <span data-en>Auto-remember previous weight inputs. Add encouragement messages post-workout: "you lifted 5kg more than last time." Weekly and monthly progress reports.</span>
-          <span data-zh>自動記住上次輸入的重量。訓練後加入鼓勵訊息，例如「你這次比上次多舉了5公斤」。每週和每月進度報告。</span>
+          <span data-en>Auto-remember last training weight. Simplify QR code flow. Allow editing past records. Background operation so screen doesn't need to stay on.</span>
+          <span data-zh>記錄上次訓練重量。簡化QR碼流程。可編輯修改訓練紀錄。App可背景作業，螢幕不需要持續開著。</span>
         </p>
       </div>
       <div class="card teal">
         <p class="card-label"><span data-en>Future vision: NFC flow</span><span data-zh>未來願景：NFC流程</span></p>
         <p class="card-content">
-          <span data-en>Phone rack with NFC: user places phone on rack → workout starts automatically → adjust reps during rest. Zero friction entry point.</span>
-          <span data-zh>NFC手機架：用戶將手機放上架子 → app自動開啟並開始記錄 → 休息時調整次數。零摩擦的訓練入口。</span>
+          <span data-en>Like pressing play on YouTube — place phone on NFC rack, workout starts automatically. Zero manual steps to begin training.</span>
+          <span data-zh>像YouTube一樣，放上手機架就可以立刻運動，什麼都不用選。零手動步驟開始訓練。</span>
         </p>
       </div>
     </div>
@@ -499,34 +561,33 @@ footer span{font-size:12px;color:var(--ink3)}
         <p class="card-content"><span data-en>Open app → Scan QR → Select exercise → Rest → Return → Adjust reps/sets</span><span data-zh>開啟app → 掃描QR碼 → 選擇動作 → 休息 → 返回 → 調整次數/組數</span></p>
       </div>
       <div class="card">
-        <p class="card-label"><span data-en>NFC flow</span><span data-zh>NFC流程</span></p>
-        <p class="card-content"><span data-en>Place phone on rack → App auto-opens → Workout starts → Adjust during rest</span><span data-zh>放上手機 → App自動開啟 → 訓練開始 → 休息時調整</span></p>
+        <p class="card-label"><span data-en>Target flow</span><span data-zh>目標流程</span></p>
+        <p class="card-content"><span data-en>Place phone on NFC rack → auto-start → train → adjust only during rest</span><span data-zh>放上手機 → 自動開始 → 訓練 → 只在休息時調整</span></p>
       </div>
     </div>
-    <div class="img-slot"><p><span data-en>[ Insert: NFC flow diagram vs current QR flow ]</span><span data-zh>[ 插入：NFC流程圖 vs 現有QR流程 ]</span></p></div>
-    <div class="img-slot"><p><span data-en>[ Insert: Figma screens: encouragement UI, weight memory feature ]</span><span data-zh>[ 插入：Figma畫面：鼓勵介面、重量記憶功能 ]</span></p></div>
+    <div class="img-slot"><p><span data-en>[ Insert: Figma screens — weight memory, simplified flow ]</span><span data-zh>[ 插入：Figma畫面——重量記憶、簡化流程 ]</span></p></div>
   </div>
 
   <div class="cs-section">
     <p class="cs-section-title"><span data-en>Reflection</span><span data-zh>反思</span></p>
     <div class="reflection">
       <p>
-        <span data-en>The biggest lesson was learning to separate the assumed problem from the real one. Stakeholders were convinced the sensors were the issue. Going directly to users revealed the friction was in the journey, not the data. Working within a donor-driven product environment also taught me how to advocate for user needs within real organisational constraints.</span>
-        <span data-zh>最大的收穫是學會區分假設的問題和真實的問題。利害關係人深信感應器是問題所在。但直接訪談用戶後，發現摩擦感來自使用流程，而非數據本身。在捐助者主導的產品環境中工作，也讓我學會如何在真實的組織限制中為用戶需求發聲。</span>
+        <span data-en>The biggest lesson was separating the assumed problem from the real one. Stakeholders were convinced the sensors were the issue. Going directly to users — through surveys, coach interviews, and gym usability visits — revealed that friction was in the journey, not the data. This research also taught me how to build a research habit and advocate for findings within a donor-driven product environment where user research wasn't formally part of the role.</span>
+        <span data-zh>最大的收穫是學會區分假設的問題和真實的問題。利害關係人深信感應器是問題所在。但透過問卷、教練訪談和健身房易用性觀察，發現摩擦感來自使用流程，而非數據本身。這次研究也讓我學會如何在捐助者主導的產品環境中建立研究習慣，並在沒有正式研究職責的情況下為用戶需求發聲。</span>
       </p>
     </div>
     <div class="tag-row">
       <span class="tag"><span data-en>User research</span><span data-zh>使用者研究</span></span>
+      <span class="tag"><span data-en>Coach interviews</span><span data-zh>教練訪談</span></span>
+      <span class="tag"><span data-en>Usability testing</span><span data-zh>易用性測試</span></span>
       <span class="tag"><span data-en>Flow redesign</span><span data-zh>流程重設計</span></span>
       <span class="tag">IoT UX</span>
-      <span class="tag"><span data-en>Stakeholder management</span><span data-zh>利害關係人管理</span></span>
       <span class="tag">Figma</span>
     </div>
   </div>
-
   <div class="cs-nav">
-    <button onclick="goto('home')"><span data-en>← Back to all work</span><span data-zh>← 回到作品集</span></button>
-    <button onclick="goto('cs2')"><span data-en>Next: Retention Research →</span><span data-zh>下一個：留客研究 →</span></button>
+    <button onclick="goto('home')"><span data-en>← All work</span><span data-zh>← 回到作品集</span></button>
+    <button onclick="goto('cs2')"><span data-en>Case 02: Retention →</span><span data-zh>案例02：留客研究 →</span></button>
   </div>
   <footer>
     <span>© Chao Huang 黃雅超 · 2026</span>
@@ -659,7 +720,7 @@ footer span{font-size:12px;color:var(--ink3)}
           <span data-zh>30位台灣受訪者。關於訓練動機、生活改變，以及什麼真正讓人持續下去的研究發現。</span>
         </p>
       </div>
-      <a href="#" onclick="goto('research');return false" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;border-radius:2px;text-decoration:none;white-space:nowrap;flex-shrink:0">
+      <a href="#" onclick="openResearch();return false" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:#fff;font-size:13px;font-family:'DM Sans',sans-serif;border-radius:2px;text-decoration:none;white-space:nowrap;flex-shrink:0">
         <span data-en>View research →</span>
         <span data-zh>查看研究報告 →</span>
       </a>
@@ -668,7 +729,7 @@ footer span{font-size:12px;color:var(--ink3)}
 
   <div class="cs-nav">
     <button onclick="goto('cs1')"><span data-en>← Case 01: UX Flow</span><span data-zh>← 案例01：UX流程</span></button>
-    <button onclick="goto('cs3')"><span data-en>Next: Visual Design →</span><span data-zh>下一個：視覺設計 →</span></button>
+    <button onclick="goto('cs3')"><span data-en>Case 03: Visual Design →</span><span data-zh>案例03：視覺設計 →</span></button>
   </div>
   <footer>
     <span>© Chao Huang 黃雅超 · 2026</span>
@@ -765,7 +826,7 @@ footer span{font-size:12px;color:var(--ink3)}
 
   <div class="cs-nav">
     <button onclick="goto('cs2')"><span data-en>← Case 02: Retention</span><span data-zh>← 案例02：留客研究</span></button>
-    <button onclick="goto('home')"><span data-en>Back to all work →</span><span data-zh>回到作品集 →</span></button>
+    <button onclick="goto('home')"><span data-en>← All work</span><span data-zh>回到作品集 →</span></button>
   </div>
   <footer>
     <span>© Chao Huang 黃雅超 · 2026</span>
@@ -825,7 +886,9 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <!-- ══════════ RESEARCH ══════════ -->
-<div class="page" id="page-research">
+<div class="modal-overlay" id="modal-research" onclick="closeResearch(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeResearchBtn()" aria-label="Close">×</button>
   <div style="max-width:720px;margin:0 auto;padding:64px 40px 80px">
 
     <button onclick="goto('cs2')" style="background:none;border:none;font-size:13px;color:var(--ink3);cursor:pointer;font-family:'DM Sans',sans-serif;padding:0;margin-bottom:40px;display:flex;align-items:center;gap:6px">
@@ -1018,12 +1081,7 @@ footer span{font-size:12px;color:var(--ink3)}
 
   </div>
 
-  <div style="padding:24px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;max-width:720px;margin:0 auto">
-    <span style="font-size:12px;color:var(--ink3)">© Chao Huang 黃雅超 · 2026</span>
-    <button onclick="goto('cs2')" style="background:none;border:none;font-size:12px;color:var(--ink3);cursor:pointer;font-family:'DM Sans',sans-serif">
-      <span data-en>← Back to Case Study 02</span><span data-zh>← 回到案例02</span>
-    </button>
-  </div>
+</div>
 </div>
 
 <!-- ══════════ 404 ══════════ -->
@@ -1036,7 +1094,7 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <script>
-const pages = ['home','about','cs1','cs2','cs3','contact','research','404'];
+const pages = ['home','about','cs1','cs2','cs3','contact','404'];
 let currentLang = 'en';
 
 function goto(id){
@@ -1050,7 +1108,6 @@ function goto(id){
   });
   window.scrollTo({top:0,behavior:'smooth'});
   try{ history.pushState({page:id},'','#'+id); }catch(e){}
-  if(id==='research') setTimeout(initResearchCharts, 50);
 }
 
 function setLang(lang){
@@ -1106,6 +1163,22 @@ function initResearchCharts(){
     }
   });
 }
+
+function openResearch(){
+  document.getElementById('modal-research').classList.add('active');
+  document.body.style.overflow='hidden';
+  setTimeout(initResearchCharts, 100);
+}
+function closeResearchBtn(){
+  document.getElementById('modal-research').classList.remove('active');
+  document.body.style.overflow='';
+}
+function closeResearch(e){
+  if(e.target === document.getElementById('modal-research')) closeResearchBtn();
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeResearchBtn();
+});
 </script>
 </body>
 </html>
