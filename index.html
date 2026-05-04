@@ -21,7 +21,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:'DM Serif Display',serif;font-size:16px;cursor:pointer;color:var(--ink)}
 .nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:13px;color:var(--ink3);text-decoration:none;cursor:pointer;transition:color 0.15s;letter-spacing:0.2px}
+.nav-links a{font-size:13px;color:var(--ink);text-decoration:none;cursor:pointer;transition:color 0.15s;letter-spacing:0.2px;font-weight:500}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
 .nav-dot{width:6px;height:6px;border-radius:50%;background:var(--teal2);display:inline-block;margin-left:4px;vertical-align:middle}
 
@@ -43,15 +43,15 @@ body.zh .meta > span span[data-en]{display:none}
 body.zh .meta > span span[data-zh]{display:inline}
 
 /* ── PAGES ── */
-.page{display:none;padding-top:72px;min-height:100vh}
+.page{display:none;padding-top:72px;min-height:100vh}.page-cs .cs-hero,.page-cs .cs-section{padding-bottom:60px}
 .page.active{display:block}
 
 /* ── HOME ── */
-.hero{padding:80px 40px 64px;max-width:900px}
+.hero{padding:80px 40px 64px;max-width:900px;margin:0 auto}
 .hero-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
 .hero-title{font-family:'DM Serif Display',serif;font-size:56px;line-height:1.08;letter-spacing:-1px;margin-bottom:24px;max-width:680px}
 .hero-title em{font-style:italic;color:var(--ink3)}
-.hero-sub{font-size:16px;color:var(--ink2);line-height:1.75;max-width:480px;margin-bottom:40px}
+.hero-sub{font-size:17px;color:var(--ink2);line-height:1.8;max-width:520px;margin-bottom:40px}
 .hero-meta{display:flex;gap:40px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap}
 .hero-meta-item strong{display:block;font-size:13px;color:var(--ink);font-weight:500;margin-bottom:2px}
 .hero-meta-item span{font-size:12px;color:var(--ink3)}
@@ -61,36 +61,39 @@ body.zh .meta > span span[data-zh]{display:inline}
 .btn-ghost:hover{background:var(--bg2);opacity:1}
 
 /* ── WORK GRID ── */
-.work-section{padding:0 40px 80px}
+.work-section{padding:0 40px 80px;max-width:900px;margin:0 auto}
 .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border)}
 .section-header h2{font-family:'DM Serif Display',serif;font-size:28px}
-.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
-.work-card{background:var(--bg);padding:32px;cursor:pointer;transition:background 0.15s;border:none;text-align:left;width:100%}
-.work-card:hover{background:var(--bg2)}
-.work-card.dark{background:var(--ink);color:#fff}
-.work-card.dark:hover{background:#2a2a2a}
-.work-card.full{grid-column:1/-1}
-.wc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:48px}
-.wc-company{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3)}
-.work-card.dark .wc-company{color:rgba(255,255,255,0.4)}
-.wc-arrow{font-size:18px;color:var(--ink3)}
-.work-card.dark .wc-arrow{color:rgba(255,255,255,0.4)}
-.wc-bottom{display:flex;justify-content:space-between;align-items:flex-end}
-.wc-title{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.25;max-width:260px}
-.work-card.dark .wc-title{color:#fff}
-.wc-tag{font-size:11px;padding:3px 10px;border:1px solid var(--border2);border-radius:20px;color:var(--ink3);white-space:nowrap}
-.work-card.dark .wc-tag{border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5)}
-.wc-img{height:100px;background:var(--bg2);border-radius:4px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.work-card.dark .wc-img{background:rgba(255,255,255,0.06)}
+.work-grid{display:flex;flex-direction:column;gap:12px}
+.work-card{background:#111;color:#fff;padding:32px 36px;cursor:pointer;transition:opacity 0.15s;border:none;text-align:left;width:100%;border-radius:12px;display:flex;align-items:center;gap:36px;min-height:180px}
+.work-card:hover{opacity:0.9}
+.work-card.light{background:#f2f2f0;color:var(--ink)}
+.work-card.full{width:100%}
+.wc-img{flex:0 0 220px;height:140px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.work-card.light .wc-img{background:rgba(0,0,0,0.06)}
+.wc-img img{width:100%;height:100%;object-fit:cover}
+.wc-content{flex:1;min-width:0}
+.wc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.wc-company{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+.work-card.light .wc-company{color:var(--ink3)}
+.wc-arrow{font-size:18px;color:rgba(255,255,255,0.35)}
+.work-card.light .wc-arrow{color:var(--ink3)}
+.wc-title{font-family:'DM Serif Display',serif;font-size:26px;line-height:1.2;margin-bottom:10px;color:#fff}
+.work-card.light .wc-title{color:var(--ink)}
+.wc-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:14px}
+.work-card.light .wc-desc{color:var(--ink3)}
+.wc-bottom{display:flex;align-items:center;gap:8px}
+.wc-tag{font-size:11px;padding:3px 10px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;color:rgba(255,255,255,0.5);white-space:nowrap}
+.work-card.light .wc-tag{border-color:var(--border2);color:var(--ink3)}
 .bar{height:5px;border-radius:2px;background:var(--border);margin:3px 0}
 .bar-s{width:45%}.bar-m{width:65%}.bar-l{width:85%}
 .bar-w{background:rgba(255,255,255,0.15)}
 
 /* ── ABOUT ── */
-.about-wrap{max-width:760px;padding:64px 40px 80px}
+.about-wrap{max-width:760px;padding:64px 40px 80px;margin:0 auto}
 .about-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
 .about-title{font-family:'DM Serif Display',serif;font-size:42px;line-height:1.1;margin-bottom:40px}
-.about-body{font-size:15px;color:var(--ink2);line-height:1.85;margin-bottom:24px}
+.about-body{font-size:16px;color:var(--ink2);line-height:1.9;margin-bottom:24px}
 .about-body strong{color:var(--ink);font-weight:500}
 .timeline{margin:48px 0;border-left:2px solid var(--border)}
 .tl-item{padding:0 0 32px 28px;position:relative}
@@ -104,14 +107,14 @@ body.zh .meta > span span[data-zh]{display:inline}
 .skill-list{font-size:13px;color:var(--ink2);line-height:1.7}
 
 /* ── CASE STUDY ── */
-.cs-hero{padding:64px 40px 48px;border-bottom:1px solid var(--border);max-width:860px}
+.cs-hero{padding:64px 40px 48px;border-bottom:1px solid var(--border);max-width:900px;margin:0 auto}
 .cs-num{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:14px}
-.cs-title{font-family:'DM Serif Display',serif;font-size:42px;line-height:1.1;letter-spacing:-0.5px;margin-bottom:18px;max-width:620px}
-.cs-desc{font-size:15px;color:var(--ink2);line-height:1.75;max-width:540px;margin-bottom:32px}
+.cs-title{font-family:'DM Serif Display',serif;font-size:46px;line-height:1.08;letter-spacing:-0.5px;margin-bottom:18px;max-width:660px}
+.cs-desc{font-size:16px;color:var(--ink2);line-height:1.8;max-width:580px;margin-bottom:32px}
 .meta-row{display:flex;gap:40px;flex-wrap:wrap}
 .meta{font-size:13px}
 .meta > span:not([data-en]):not([data-zh]){display:block;color:var(--ink3);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
-.cs-section{padding:40px 40px 0;max-width:860px}
+.cs-section{padding:40px 40px 0;max-width:900px;margin:0 auto}
 .cs-section-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
 .callout{background:var(--bg2);border-left:2px solid var(--ink);padding:20px 24px;margin:16px 0;border-radius:0 6px 6px 0}
 .callout p{font-size:14px;line-height:1.7;color:var(--ink)}
@@ -120,7 +123,7 @@ body.zh .meta > span span[data-zh]{display:inline}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
 .card{background:var(--bg2);border-radius:6px;padding:20px;border:1px solid var(--border)}
 .card-label{font-size:10px;color:var(--ink3);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:8px}
-.card-content{font-size:13px;color:var(--ink2);line-height:1.65}
+.card-content{font-size:14px;color:var(--ink2);line-height:1.7}
 .card.accent{border-left:2px solid var(--ink)}
 .card.teal{border-left:2px solid var(--teal)}
 .flow{display:flex;align-items:center;gap:8px;margin:16px 0;flex-wrap:wrap}
@@ -142,7 +145,7 @@ body.zh .meta > span span[data-zh]{display:inline}
 .cs-nav button:hover{color:var(--ink)}
 
 /* ── CONTACT ── */
-.contact-wrap{max-width:640px;padding:64px 40px 80px}
+.contact-wrap{max-width:640px;padding:64px 40px 80px;margin:0 auto}
 .contact-title{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.1;margin-bottom:24px}
 .contact-sub{font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:48px}
 .contact-links{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}
@@ -170,8 +173,6 @@ footer span{font-size:12px;color:var(--ink3)}
   .nav-links{gap:16px}
   .hero,.work-section,.about-wrap,.contact-wrap{padding-left:20px;padding-right:20px}
   .hero-title{font-size:36px}
-  .work-grid{grid-template-columns:1fr}
-  .work-card.full{grid-column:1}
   .two-col,.insight-row,.skills-grid{grid-template-columns:1fr}
   .cs-hero,.cs-section{padding-left:20px;padding-right:20px}
   .cs-title{font-size:28px}
@@ -187,6 +188,39 @@ footer span{font-size:12px;color:var(--ink3)}
 .modal-close:hover{background:var(--bg3);color:var(--ink)}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media(max-width:600px){.modal-overlay{padding:0}.modal-box{border-radius:0;min-height:100vh;padding:40px 20px 60px}}
+
+/* ── SCREEN CAROUSEL ── */
+.carousel{position:relative;margin:24px 0}
+.carousel-track-wrap{overflow:hidden}
+.carousel-track{display:flex;transition:transform 0.35s cubic-bezier(.4,0,.2,1)}
+.carousel-slide{flex:0 0 100%;display:flex;gap:32px;align-items:flex-start;padding:4px}
+.carousel-phone{flex:0 0 180px;border-radius:28px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.15);border:1px solid var(--border)}
+.carousel-phone img{width:100%;display:block}
+.carousel-caption{flex:1;min-width:0;padding-top:8px}
+.cap-screen{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.cap-title{font-family:"DM Serif Display",serif;font-size:18px;color:var(--ink);margin-bottom:10px;line-height:1.25}
+.cap-why{font-size:13px;color:var(--ink2);line-height:1.75;margin-bottom:14px}
+.cap-insight{background:var(--bg2);border-left:2px solid var(--ink);padding:10px 14px;border-radius:0 6px 6px 0;font-size:12px;color:var(--ink2);line-height:1.65}
+.cap-insight strong{color:var(--ink);font-weight:500}
+.carousel-controls{display:flex;align-items:center;gap:12px;margin-top:16px}
+.carousel-btn{background:var(--bg2);border:1px solid var(--border2);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;color:var(--ink);flex-shrink:0}
+.carousel-btn:hover{background:var(--bg3)}
+.carousel-btn:disabled{opacity:0.3;cursor:default}
+.carousel-dots{display:flex;gap:6px;flex:1;align-items:center}
+.c-dot{width:6px;height:6px;border-radius:50%;background:var(--border2);cursor:pointer;transition:all 0.2s}
+.c-dot.active{background:var(--ink);width:18px;border-radius:3px}
+.carousel-counter{font-size:12px;color:var(--ink3)}
+@media(max-width:600px){.carousel-slide{flex-direction:column;align-items:center}.carousel-phone{flex:0 0 auto;width:180px}}
+
+/* ── STICKY CASE STUDY NAV ── */
+.cs-subnav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:#ffffff;border-top:1px solid #e8e8e8;display:none;justify-content:space-between;align-items:center;padding:12px 40px}
+
+.cs-subnav.visible{display:flex}
+.cs-subnav button{background:none;border:none;font-size:13px;color:#111111 !important;cursor:pointer;font-family:"DM Sans",sans-serif;padding:4px 0;transition:opacity 0.15s;font-weight:600}
+.cs-subnav button:hover{opacity:0.6}
+.cs-subnav-title{font-size:12px;color:#111111 !important;font-weight:500}
+/* hide old cs-nav at bottom */
+.cs-nav{display:none}
 </style>
 </head>
 <body>
@@ -195,9 +229,9 @@ footer span{font-size:12px;color:var(--ink3)}
 <nav>
   <span class="nav-logo" onclick="goto('home')">Chao</span>
   <div class="nav-links">
-    <a onclick="goto('home')" id="nav-home" data-en="Work" data-zh="作品集">Work</a>
-    <a onclick="goto('about')" id="nav-about" data-en="About" data-zh="關於我">About</a>
-    <a onclick="goto('contact')" id="nav-contact" data-en="Contact" data-zh="聯絡">Contact</a>
+    <a onclick="goto('home')" id="nav-home">Work</a>
+    <a onclick="goto('about')" id="nav-about">About</a>
+    <a onclick="goto('contact')" id="nav-contact">Contact</a>
     <span class="nav-dot"></span>
     <div class="lang-toggle">
       <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
@@ -222,7 +256,7 @@ footer span{font-size:12px;color:var(--ink3)}
       <span data-zh>15年橫跨硬體與軟體的經驗，從代工廠到健身房應用軟體。我找出使用者真正需要的，而不只是他們說想要的。</span>
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button class="btn" onclick="goto('work')">
+      <button class="btn" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">
         <span data-en>View my work ↓</span>
         <span data-zh>查看作品集 ↓</span>
       </button>
@@ -231,86 +265,84 @@ footer span{font-size:12px;color:var(--ink3)}
         <span data-zh>聯絡我</span>
       </button>
     </div>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <strong><span data-en>Based in</span><span data-zh>所在地</span></strong>
-        <span><span data-en>Tainan, Taiwan</span><span data-zh>台灣台南</span></span>
-      </div>
-      <div class="hero-meta-item">
-        <strong><span data-en>Experience</span><span data-zh>經驗年資</span></strong>
-        <span>15+ <span data-en>years</span><span data-zh>年</span></span>
-      </div>
-      <div class="hero-meta-item">
-        <strong><span data-en>Languages</span><span data-zh>語言</span></strong>
-        <span><span data-en>中文 · English</span><span data-zh>中文 · English</span></span>
-      </div>
-      <div class="hero-meta-item">
-        <strong><span data-en>Status</span><span data-zh>求職狀態</span></strong>
-        <span style="color:var(--teal2)"><span data-en>Open to work</span><span data-zh>尋找新機會中</span></span>
-      </div>
-    </div>
+
   </div>
 
   <div class="work-section" id="work">
     <div class="section-header">
       <h2><span data-en>Selected Work</span><span data-zh>精選作品</span></h2>
-      <span style="font-size:12px;color:var(--ink3)">2024 – 2025</span>
+      <span style="font-size:12px;color:var(--ink3)">2022 – Now</span>
     </div>
     <div class="work-grid">
-      <button class="work-card dark" onclick="goto('cs1')">
-        <div class="wc-top">
-          <span class="wc-company">iOGYM · <span data-en>UX Research</span><span data-zh>使用者研究</span></span>
-          <span class="wc-arrow">↗</span>
+      <button class="work-card" onclick="goto('cs1')">
+        <div class="wc-img">
+          <img src="weeklyscreen2.png" alt="iOGYM app weekly report" style="object-position:top">
         </div>
-        <div class="wc-img" style="flex-direction:column;gap:5px;padding:16px">
-          <div class="bar bar-l bar-w"></div>
-          <div class="bar bar-m bar-w"></div>
-          <div class="bar bar-s bar-w"></div>
-        </div>
-        <div class="wc-bottom">
+        <div class="wc-content">
+          <div class="wc-top">
+            <span class="wc-company">iOGYM · <span data-en>UX Research</span><span data-zh>使用者研究</span></span>
+            <span class="wc-arrow">↗</span>
+          </div>
           <p class="wc-title">
-            <span data-en>Why users left. It wasn't the sensors</span>
-            <span data-zh>為什麼用戶離開。不是感應器的問題</span>
+            <span data-en>Why users left. It wasn't the sensors.</span>
+            <span data-zh>為什麼用戶離開。不是感應器的問題。</span>
           </p>
-          <span class="wc-tag">Case Study 01</span>
+          <p class="wc-desc">
+            <span data-en>Everyone assumed sensor inaccuracy was the problem. User research revealed something completely different.</span>
+            <span data-zh>所有人都以為感應器不準確是問題所在。使用者研究揭示了完全不同的真相。</span>
+          </p>
+          <div class="wc-bottom">
+            <span class="wc-tag">Case Study 01</span>
+            <span class="wc-tag"><span data-en>UX Research</span><span data-zh>使用者研究</span></span>
+          </div>
         </div>
       </button>
 
-      <button class="work-card" onclick="goto('cs2')">
-        <div class="wc-top">
-          <span class="wc-company">iOGYM · <span data-en>Product Strategy</span><span data-zh>產品策略</span></span>
-          <span class="wc-arrow">↗</span>
+      <button class="work-card" onclick="goto('cs3')">
+        <div class="wc-img">
+          <img src="monthlyscreen6.png" alt="iOGYM monthly report visual design" style="object-position:top">
         </div>
-        <div class="wc-img" style="flex-direction:column;gap:5px;padding:16px">
-          <div class="bar bar-m"></div>
-          <div class="bar bar-l"></div>
-          <div class="bar bar-s"></div>
-        </div>
-        <div class="wc-bottom">
+        <div class="wc-content">
+          <div class="wc-top">
+            <span class="wc-company">iOGYM · <span data-en>Visual Design</span><span data-zh>視覺設計</span></span>
+            <span class="wc-arrow">↗</span>
+          </div>
           <p class="wc-title">
-            <span data-en>What gyms actually need from their data</span>
-            <span data-zh>健身房真正需要的資料洞察</span>
+            <span data-en>Making complex fitness data feel simple.</span>
+            <span data-zh>讓複雜的健身數據變得易懂。</span>
           </p>
-          <span class="wc-tag">Case Study 02</span>
+          <p class="wc-desc">
+            <span data-en>Designing weekly and monthly training reports for a dark-mode fitness app — data that motivates rather than overwhelms.</span>
+            <span data-zh>為深色模式健身應用程式設計每週和每月訓練報告——讓資料激勵使用者而非令他們不知所措。</span>
+          </p>
+          <div class="wc-bottom">
+            <span class="wc-tag">Case 02</span>
+            <span class="wc-tag"><span data-en>Visual Design</span><span data-zh>視覺設計</span></span>
+          </div>
         </div>
       </button>
 
-      <button class="work-card full" onclick="goto('cs3')">
-        <div class="wc-top">
-          <span class="wc-company">iOGYM · <span data-en>Visual Design</span><span data-zh>視覺設計</span></span>
-          <span class="wc-arrow">↗</span>
+      <button class="work-card light" onclick="goto('cs2')">
+        <div class="wc-img">
+          <img src="weeklyscreen3.png" alt="iOGYM gym retention research" style="object-position:top">
         </div>
-        <div class="wc-img" style="flex-direction:row;gap:16px;padding:16px;height:72px">
-          <div style="flex:1;display:flex;flex-direction:column;gap:4px"><div class="bar bar-l"></div><div class="bar bar-m"></div></div>
-          <div style="flex:1;display:flex;flex-direction:column;gap:4px"><div class="bar bar-m"></div><div class="bar bar-l"></div></div>
-          <div style="flex:1;display:flex;flex-direction:column;gap:4px"><div class="bar bar-s"></div><div class="bar bar-m"></div></div>
-        </div>
-        <div class="wc-bottom">
+        <div class="wc-content">
+          <div class="wc-top">
+            <span class="wc-company">iOGYM · <span data-en>Product Strategy</span><span data-zh>產品策略</span></span>
+            <span class="wc-arrow">↗</span>
+          </div>
           <p class="wc-title">
-            <span data-en>Making complex fitness data feel simple</span>
-            <span data-zh>讓複雜的健身數據變得易懂</span>
+            <span data-en>What do gyms actually need from their data?</span>
+            <span data-zh>健身房真正需要的資料洞察是什麼？</span>
           </p>
-          <span class="wc-tag"><span data-en>Visual Design</span><span data-zh>視覺設計</span></span>
+          <p class="wc-desc">
+            <span data-en>Our product was built for individual tracking — but our real customer is the gym. We're redirecting to help gyms build retention like Netflix or Spotify: predicting what members need before they ask.</span>
+            <span data-zh>我們的產品是為個人追蹤而設計的——但真正的客戶是健身房。我們正在重新調整方向，幫助健身房像Netflix或Spotify一樣建立留客機制：在會員開口之前就預測他們的需求。</span>
+          </p>
+          <div class="wc-bottom">
+            <span class="wc-tag">Case 03</span>
+            <span class="wc-tag" style="border-color:#F0C040;color:#D4A017"><span data-en>In Progress</span><span data-zh>進行中</span></span>
+          </div>
         </div>
       </button>
     </div>
@@ -407,9 +439,14 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <!-- ══════════ CASE STUDY 01 ══════════ -->
-<div class="page" id="page-cs1">
+<div class="page" id="page-cs1" style="padding-bottom:64px">
+<div class="cs-subnav visible" id="subnav-cs1">
+  <button onclick="goto('home')"><span data-en>← All work</span><span data-zh>← 回到作品集</span></button>
+  <span class="cs-subnav-title"><span data-en>Case 01 — UX Flow Research</span><span data-zh>案例01 — UX流程研究</span></span>
+  <button onclick="goto('cs3')"><span data-en>Case 02 →</span><span data-zh>案例02 →</span></button>
+</div>
   <div class="cs-hero">
-    <p class="cs-num">Case Study 01 · iOGYM · 2024–Now</p>
+    <p class="cs-num">Case 01 · iOGYM · UX Research · 2024–Now</p>
     <h1 class="cs-title">
       <span data-en>Why users left. It wasn't the sensors.</span>
       <span data-zh>為什麼用戶離開。不是感應器的問題。</span>
@@ -424,6 +461,10 @@ footer span{font-size:12px;color:var(--ink3)}
       <div class="meta"><span><span data-en>Team</span><span data-zh>團隊</span></span><span data-en>9 people, cross-functional</span><span data-zh>9人跨職能團隊</span></div>
       <div class="meta"><span><span data-en>Outcome</span><span data-zh>成果</span></span><span data-en>Redirected dev priorities</span><span data-zh>重新調整開發優先順序</span></div>
     </div>
+
+
+
+
   </div>
 
   <div class="cs-section">
@@ -565,7 +606,7 @@ footer span{font-size:12px;color:var(--ink3)}
         <p class="card-content"><span data-en>Place phone on NFC rack → auto-start → train → adjust only during rest</span><span data-zh>放上手機 → 自動開始 → 訓練 → 只在休息時調整</span></p>
       </div>
     </div>
-    <div class="img-slot"><p><span data-en>[ Insert: Figma screens — weight memory, simplified flow ]</span><span data-zh>[ 插入：Figma畫面——重量記憶、簡化流程 ]</span></p></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0;justify-content:center"><div style="flex:0 0 auto;width:180px;border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15);border:1px solid var(--border)"><img src="weeklyscreen2.png" alt="Weekly data overview with encouragement banner" style="width:100%;display:block"></div><div style="flex:0 0 auto;width:180px;border-radius:24px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15);border:1px solid var(--border)"><img src="weeklyscreen3.png" alt="Training review and muscle group breakdown" style="width:100%;display:block"></div></div>
   </div>
 
   <div class="cs-section">
@@ -600,9 +641,18 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <!-- ══════════ CASE STUDY 02 ══════════ -->
-<div class="page" id="page-cs2">
+<div class="page" id="page-cs2" style="padding-bottom:64px">
+<div class="cs-subnav visible" id="subnav-cs2">
+  <button onclick="goto('cs3')"><span data-en>← Case 02</span><span data-zh>← 案例02</span></button>
+  <span class="cs-subnav-title"><span data-en>Case 03 — B2B Retention Research</span><span data-zh>案例03 — B2B留客研究</span></span>
+  <button onclick="goto('home')"><span data-en>All work →</span><span data-zh>回到作品集 →</span></button>
+</div>
   <div class="cs-hero">
-    <p class="cs-num">Case Study 02 · iOGYM B2B Research · 2025</p>
+    <p class="cs-num">Case 03 · iOGYM B2B Research · 2026 · In Progress</p>
+    <div style="display:inline-flex;align-items:center;gap:6px;background:#FFF3CD;border:1px solid #F0C040;border-radius:4px;padding:4px 12px;margin-bottom:12px">
+      <span style="width:7px;height:7px;border-radius:50%;background:#D4A017;display:inline-block;flex-shrink:0"></span>
+      <span style="font-size:11px;color:#7A5A00;font-weight:500;letter-spacing:0.3px"><span data-en>Work in progress · Personal exploration · Not yet proposed to team</span><span data-zh>進行中 · 個人探索 · 尚未提案給團隊</span></span>
+    </div>
     <h1 class="cs-title">
       <span data-en>What do gyms actually need from their data?</span>
       <span data-zh>健身房真正需要的資料洞察是什麼？</span>
@@ -695,8 +745,8 @@ footer span{font-size:12px;color:var(--ink3)}
     <p class="cs-section-title"><span data-en>Reflection</span><span data-zh>反思</span></p>
     <div class="reflection">
       <p>
-        <span data-en>This research reframed the entire product strategy: from tracking exercise data to helping gyms understand and retain their members. The most important insight was knowing when NOT to intervene. Pushing social connection on a lone wolf lifter creates a worse experience than no intervention at all.</span>
-        <span data-zh>這項研究重新定義了整體產品策略，從追蹤運動數據出發，轉向幫助健身房了解並留住會員。最重要的洞察是知道何時不應該介入。對喜歡獨自訓練的重訓者推銷社交連結，反而造成比不介入更差的體驗。</span>
+        <span data-en>This research reframed the entire product strategy. The original product tracked individual exercise data — but the real customer is the gym, not the member. The new direction: help gyms predict churn and intervene at the right moment, for the right member, in the right way. Like Netflix recommending what to watch next, or Spotify's Discover Weekly — anticipating needs before they're expressed. The hardest insight was restraint: knowing when NOT to intervene matters just as much as knowing when to act.</span>
+        <span data-zh>這項研究從根本上重新定義了產品策略。原本的產品追蹤個人運動數據——但真正的客戶是健身房，不是會員。新方向：幫助健身房預測流失風險，在正確的時機、對正確的會員、以正確的方式介入。就像Netflix推薦你接下來想看什麼，或是Spotify的發現週報——在需求被表達之前就預測到它。最難的洞察是克制：知道何時不介入，和知道何時介入同樣重要。</span>
       </p>
     </div>
     <div class="tag-row">
@@ -742,9 +792,14 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <!-- ══════════ VISUAL DESIGN ══════════ -->
-<div class="page" id="page-cs3">
+<div class="page" id="page-cs3" style="padding-bottom:64px">
+<div class="cs-subnav visible" id="subnav-cs3">
+  <button onclick="goto('cs1')"><span data-en>← Case 01</span><span data-zh>← 案例01</span></button>
+  <span class="cs-subnav-title"><span data-en>Case 02 — Visual Design</span><span data-zh>案例02 — 視覺設計</span></span>
+  <button onclick="goto('cs2')"><span data-en>Case 03 →</span><span data-zh>案例03 →</span></button>
+</div>
   <div class="cs-hero">
-    <p class="cs-num"><span data-en>Visual Design · iOGYM · 2024–Now</span><span data-zh>視覺設計 · iOGYM · 2024至今</span></p>
+    <p class="cs-num"><span data-en>Case 02 · Visual Design · iOGYM · 2024–Now</span><span data-zh>案例02 · 視覺設計 · iOGYM · 2024至今</span></p>
     <h1 class="cs-title">
       <span data-en>Making complex fitness data feel simple.</span>
       <span data-zh>讓複雜的健身數據變得易懂。</span>
@@ -780,30 +835,109 @@ footer span{font-size:12px;color:var(--ink3)}
 
   <div class="cs-section">
     <p class="cs-section-title"><span data-en>Weekly report</span><span data-zh>每週報告</span></p>
-    <div class="img-slot"><p><span data-en>[ Insert: weekly report Figma screens ]</span><span data-zh>[ 插入：每週報告Figma畫面 ]</span></p></div>
-    <div class="two-col">
-      <div class="card">
-        <p class="card-label"><span data-en>What it shows</span><span data-zh>顯示內容</span></p>
-        <p class="card-content"><span data-en>Total volume, exercise PRs, sessions completed, muscle group breakdown per week</span><span data-zh>總訓練量、個人紀錄、完成訓練次數、每週肌肉群分佈</span></p>
+    <div class="carousel">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="track-weekly">
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="weeklyscreen2.png" alt="Weekly data overview" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 01 — Data Overview</span><span data-zh>畫面01 — 數據總覽</span></p>
+            <h3 class="cap-title"><span data-en>Volume by weekday, not just weekly total</span><span data-zh>按訓練日查看，而不只是週總量</span></h3>
+            <p class="cap-why"><span data-en>Users who split upper and lower body training see very different volume on different days. A single weekly total masks the real pattern.</span><span data-zh>分上下肢訓練的使用者，每天的訓練量差異很大。單一的週總量數字具有誤導性，掩蓋了真實的訓練模式。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> Weekday tabs let users drill into each training day individually, making comparison meaningful rather than averaged out.</span><span data-zh><strong>設計決策：</strong>增加星期分頁，讓使用者能單獨查看每個訓練日，讓訓練量比較有意義而非被平均掉。</span></div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="weeklyscreen3.png" alt="Training schedule heatmap" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 02 — Training Time Pattern</span><span data-zh>畫面02 — 訓練時段分析</span></p>
+            <h3 class="cap-title"><span data-en>Your most efficient time. No lecture, just insight.</span><span data-zh>你最有效率的訓練時段。只給洞察，不說教。</span></h3>
+            <p class="cap-why"><span data-en>People train at wildly different times — and all of them are valid. The heatmap shows when each person actually shows up most consistently, so they can recognise their own natural rhythm. Not to correct it, just to see it.</span><span data-zh>每個人的訓練時間都不一樣——而且都是有效的。熱力圖顯示每個人實際最一致出現的時段，讓他們能認識自己的自然節奏。不是為了糾正，只是讓他們看見。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> No "optimal training time" label. No suggestion to change habits. Just a gentle mirror: <em>you show up at this time — and showing up at all is what matters most.</em></span><span data-zh><strong>設計決策：</strong>沒有「最佳訓練時間」的標籤。不建議改變習慣。只是一面溫柔的鏡子：<em>你在這個時段出現——而能夠出現，本身就是最重要的事。</em></span></div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="weeklyscreen5.png" alt="Training quality and tempo analysis" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 03 — Training Quality & Tempo</span><span data-zh>畫面03 — 訓練品質與節奏</span></p>
+            <h3 class="cap-title"><span data-en>Connect tempo to outcome.</span><span data-zh>讓訓練節奏和目標產生連結。</span></h3>
+            <p class="cap-why"><span data-en>Different tempos produce different results — hypertrophy, strength, explosiveness. Most users don't know what tempo they're training at, or what it means for their goals.</span><span data-zh>不同的訓練節奏會產生不同的效果——增肌、力量、爆發力。大多數使用者不知道自己實際的訓練節奏，也不知道這對目標意味著什麼。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> Show the 增肌/力量/爆發 tempo distribution so users can compare their actual training style against what they want to achieve.</span><span data-zh><strong>設計決策：</strong>顯示增肌、力量、爆發節奏的分佈，讓使用者可以對比自己的實際訓練風格和訓練目標。</span></div>
+          </div>
+        </div>
+        </div>
       </div>
-      <div class="card">
-        <p class="card-label"><span data-en>Design decision</span><span data-zh>設計決策</span></p>
-        <p class="card-content"><span data-en>Encouragement copy over raw numbers. "You lifted 5kg more than last time" rather than just showing the delta.</span><span data-zh>鼓勵性文案而非純數字。「你這次比上次多舉了5公斤」，而不只是顯示數值差異。</span></p>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-weekly" onclick="cPrev('weekly')" disabled>←</button>
+        <div class="carousel-dots" id="dots-weekly"><span class="c-dot  active" onclick="cGoTo('weekly',0)"></span><span class="c-dot" onclick="cGoTo('weekly',1)"></span><span class="c-dot" onclick="cGoTo('weekly',2)"></span></div>
+        <span class="carousel-counter" id="counter-weekly">1 / 3</span>
+        <button class="carousel-btn" id="next-weekly" onclick="cNext('weekly')">→</button>
       </div>
     </div>
   </div>
 
   <div class="cs-section">
     <p class="cs-section-title"><span data-en>Monthly report</span><span data-zh>每月報告</span></p>
-    <div class="img-slot"><p><span data-en>[ Insert: monthly report Figma screens ]</span><span data-zh>[ 插入：每月報告Figma畫面 ]</span></p></div>
-    <div class="two-col">
-      <div class="card">
-        <p class="card-label"><span data-en>What it shows</span><span data-zh>顯示內容</span></p>
-        <p class="card-content"><span data-en>Month-over-month trends, consistency score, personal records, progress encouragement</span><span data-zh>月對月趨勢、穩定性分數、個人紀錄、進步鼓勵</span></p>
+    <div class="carousel">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="track-monthly">
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="monthlyscreen3.png" alt="Monthly training score overview" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 01 — Monthly Score</span><span data-zh>畫面01 — 月度總分</span></p>
+            <h3 class="cap-title"><span data-en>Four dimensions. One score. All encouraging.</span><span data-zh>四個維度。一個分數。全都是鼓勵。</span></h3>
+            <p class="cap-why"><span data-en>The score is made of four dimensions, each designed to reward sustainable habits rather than peak performance:</span><span data-zh>分數由四個維度組成，每個維度都被設計來獎勵可持續的習慣，而非巔峰表現：</span></p>
+            <div class="cap-insight">
+              <p style="margin-bottom:8px"><span data-en><strong>持續性 (max 40)</strong> — Training days ÷ target × 40. +2 bonus for 5 consecutive days. -2 if skipped 5 in a row. <em>Consistency is the only metric that really matters.</em></span><span data-zh><strong>持續性（最高40分）</strong> — 訓練日 ÷ 目標訓練日 × 40。連續練5天 +2分。連續5天沒練 -2分。<em>持續性才是真正重要的指標。</em></span></p>
+              <p style="margin-bottom:8px"><span data-en><strong>訓練量</strong> — Maintaining volume is already a win. No need to always push more.</span><span data-zh><strong>訓練量</strong> — 維持住訓練量就已經很好了。不需要每次都更多。</span></p>
+              <p style="margin-bottom:8px"><span data-en><strong>平衡</strong> — Push and pull both matter. Balance protects the body long-term.</span><span data-zh><strong>平衡</strong> — 推和拉都同樣重要。平衡能長期保護身體。</span></p>
+              <p><span data-en><strong>恢復狀態</strong> — Staying within a healthy RPE range is the goal. Not maxing out every session.</span><span data-zh><strong>恢復狀態</strong> — 保持在健康的RPE範圍內才是目標。不是每次都要榨乾自己。</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="monthlyscreen6_3.png" alt="Monthly achievements 8 PRs" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 02 — Monthly Achievements</span><span data-zh>畫面02 — 月度成就</span></p>
+            <h3 class="cap-title"><span data-en>Specific PRs. Exact dates. Real proof.</span><span data-zh>具體紀錄。確切日期。真實的證明。</span></h3>
+            <p class="cap-why"><span data-en>Generic "great job!" doesn't feel earned. But seeing "臥推 8→10下 +20% on 11.25" — that's yours. That's specific. That happened.</span><span data-zh>泛泛的「做得好！」不會讓人感到有成就感。但看到「臥推 8→10下 +20%，11月25日」——那是屬於你的。那是具體的。那真的發生了。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> Every PR shows the exact date and percentage gain. No rounding, no generalising. The user earned this — they deserve the full detail.</span><span data-zh><strong>設計決策：</strong>每個個人紀錄都顯示確切日期和百分比增幅。不四捨五入，不概括。使用者努力贏得了這些——他們值得看到完整的細節。</span></div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="monthlyscreen2.png" alt="Monthly volume trend with previous month" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 03 — Volume Trend</span><span data-zh>畫面03 — 訓練量趨勢</span></p>
+            <h3 class="cap-title"><span data-en>The average line tells the story at a glance.</span><span data-zh>平均線讓人一眼看出高低。</span></h3>
+            <p class="cap-why"><span data-en>Weekly numbers alone are hard to judge. Is this week good or bad? The key design element: a large average number on the left, and a horizontal reference line across the chart so users instantly see which weeks were above or below their own average — no mental maths required.</span><span data-zh>單看週數字很難判斷。這週是好是壞？核心設計元素：左側顯示大的平均數字，圖表上有一條水平參考線，讓使用者立刻看出哪幾週高於或低於自己的平均——不需要心算。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> The highlighted average line is the anchor. Users compare themselves to themselves — not to other people or arbitrary standards.</span><span data-zh><strong>設計決策：</strong>高亮的平均線是基準。使用者與自己比較——不是與他人或任意標準比較。</span></div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="monthlyscreen4.png" alt="Muscle group training volume by week" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 04 — Muscle Group Breakdown</span><span data-zh>畫面04 — 肌群訓練分析</span></p>
+            <h3 class="cap-title"><span data-en>Which muscles are you actually training most?</span><span data-zh>你實際上最常訓練哪些肌群？</span></h3>
+            <p class="cap-why"><span data-en>Users often don't realise how skewed their training is across muscle groups. This screen shows two things at once: the percentage of sets per muscle group, and the total volume (kg) per week as bars — with a white average line so any week that was heavier or lighter than usual stands out immediately.</span><span data-zh>使用者通常不知道自己的訓練在肌群之間有多不均衡。這個畫面同時顯示兩件事：各肌群的組數比例，以及每週的總重量（kg）柱狀圖——加上白色平均線，讓任何高於或低於平均的週份立刻顯現。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> Set percentage (left) + weekly volume bars + white average line. Three layers of information in one view — without overwhelming the user.</span><span data-zh><strong>設計決策：</strong>組數比例（左側）+ 每週重量柱狀圖 + 白色平均線。一個畫面三層資訊——但不會讓使用者感到不知所措。</span></div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-phone"><img src="monthlyscreen6_2.png" alt="Dual y-axis body composition vs training volume" loading="lazy"></div>
+          <div class="carousel-caption">
+            <p class="cap-screen"><span data-en>Screen 05 — Body vs Training</span><span data-zh>畫面05 — 身體與訓練的關係</span></p>
+            <h3 class="cap-title"><span data-en>Does training actually change the body? See it directly.</span><span data-zh>訓練真的改變了身體嗎？直接看見。</span></h3>
+            <p class="cap-why"><span data-en>This is the most complex screen — a dual y-axis chart showing body metrics (muscle mass, weight, body fat %) and training metrics together, both expressed as percentage change (−20% to +20%). When body and training indicators move together, the curves shift noticeably. When nothing much changes, the lines stay flat.</span><span data-zh>這是最複雜的畫面——雙Y軸圖表，同時顯示身體指標（肌肉量、體重、體脂率）和訓練指標，兩者都以百分比變化（-20%到+20%）呈現。當身體和訓練指標同步變動時，曲線會有明顯的起伏。當變化不大時，曲線就會平緩。</span></p>
+            <div class="cap-insight"><span data-en><strong>Design decision:</strong> Percentage change (not absolute numbers) makes muscle gain and volume comparable on the same axis. A flat curve isn't failure — it means the body is stable. A dramatic curve means something changed.</span><span data-zh><strong>設計決策：</strong>使用百分比變化（而非絕對數字），讓肌肉增長和訓練量可以在同一個軸上比較。平緩的曲線不是失敗——代表身體狀態穩定。明顯的曲線代表有什麼改變了。</span></div>
+          </div>
+        </div>
+        </div>
       </div>
-      <div class="card">
-        <p class="card-label"><span data-en>Design decision</span><span data-zh>設計決策</span></p>
-        <p class="card-content"><span data-en>Celebrates consistency and effort, not just peak performance</span><span data-zh>慶祝持續性和努力，而不只是最佳表現</span></p>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-monthly" onclick="cPrev('monthly')" disabled>←</button>
+        <div class="carousel-dots" id="dots-monthly"><span class="c-dot  active" onclick="cGoTo('monthly',0)"></span><span class="c-dot" onclick="cGoTo('monthly',1)"></span><span class="c-dot" onclick="cGoTo('monthly',2)"></span><span class="c-dot" onclick="cGoTo('monthly',3)"></span><span class="c-dot" onclick="cGoTo('monthly',4)"></span></div>
+        <span class="carousel-counter" id="counter-monthly">1 / 5</span>
+        <button class="carousel-btn" id="next-monthly" onclick="cNext('monthly')">→</button>
       </div>
     </div>
   </div>
@@ -1175,6 +1309,25 @@ function closeResearch(e){
 document.addEventListener('keydown', function(e){
   if(e.key==='Escape') closeResearchBtn();
 });
+
+// ── CAROUSEL ──
+const carouselState = {};
+function cInit(id, n){
+  carouselState[id] = {idx:0, n:n};
+}
+function cGoTo(id, idx){
+  const s = carouselState[id];
+  if(!s) return;
+  s.idx = Math.max(0, Math.min(idx, s.n-1));
+  document.getElementById('track-'+id).style.transform = `translateX(-${s.idx*100}%)`;
+  document.querySelectorAll('#dots-'+id+' .c-dot').forEach((d,i) => d.classList.toggle('active', i===s.idx));
+  document.getElementById('counter-'+id).textContent = `${s.idx+1} / ${s.n}`;
+  document.getElementById('prev-'+id).disabled = s.idx===0;
+  document.getElementById('next-'+id).disabled = s.idx===s.n-1;
+}
+function cPrev(id){ const s=carouselState[id]; if(s) cGoTo(id, s.idx-1); }
+function cNext(id){ const s=carouselState[id]; if(s) cGoTo(id, s.idx+1); }
+cInit('weekly',3); cInit('monthly',5);
 </script>
 </body>
 </html>
