@@ -305,7 +305,7 @@ footer span{font-size:12px;color:var(--ink3)}
         </div>
       </button>
 
-      <button class="work-card" onclick="goto('cs3')">
+      <button class="work-card" onclick="goto('cs2')">
         <div class="wc-img" style="background:#111;padding:0">
           <svg width="100%" height="100%" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
             <rect width="220" height="140" fill="#111"/>
@@ -338,7 +338,7 @@ footer span{font-size:12px;color:var(--ink3)}
         </div>
       </button>
 
-      <button class="work-card light" onclick="goto('cs2')">
+      <button class="work-card light" onclick="goto('cs3')">
         <div class="wc-img" style="background:#f5f5f3;padding:16px 14px">
           <svg width="100%" height="100%" viewBox="0 0 192 108" xmlns="http://www.w3.org/2000/svg">
             <text x="0" y="10" font-family="Arial,sans-serif" font-size="6" fill="#aaa" letter-spacing="1">SPORTS PRACTISED</text>
@@ -389,6 +389,32 @@ footer span{font-size:12px;color:var(--ink3)}
           </div>
         </div>
       </button>
+      <button class="work-card light" style="opacity:0.6;cursor:default;pointer-events:none" disabled>
+        <div class="wc-img" style="background:#f0f0ed;display:flex;align-items:center;justify-content:center">
+          <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" fill="none" stroke="#ccc" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line x1="32" y1="20" x2="32" y2="44" stroke="#ccc" stroke-width="1.5"/>
+            <line x1="20" y1="32" x2="44" y2="32" stroke="#ccc" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="wc-content">
+          <div class="wc-top">
+            <span class="wc-company" style="color:var(--ink3)"><span data-en>Self-directed · TBD</span><span data-zh>自主專案 · 待定</span></span>
+          </div>
+          <p class="wc-title" style="color:var(--ink2)">
+            <span data-en>A project I haven't started yet.</span>
+            <span data-zh>一個還沒開始的專案。</span>
+          </p>
+          <p class="wc-desc" style="color:var(--ink3)">
+            <span data-en>Something outside iOGYM. A brief I set myself. A real problem I find interesting enough to dig into, probably around brand experience, service design, or something in Tainan.</span>
+            <span data-zh>一個iOGYM以外的東西。由我自己設定題目。一個我覺得夠有趣、值得深挖的真實問題，大概是品牌體驗、服務設計，或者台南的某個東西。</span>
+          </p>
+          <div class="wc-bottom">
+            <span class="wc-tag" style="border-color:#ccc;color:#bbb"><span data-en>Coming</span><span data-zh>籌備中</span></span>
+            <span class="wc-tag" style="border-color:#ccc;color:#bbb"><span data-en>Branding · Service Design</span><span data-zh>品牌 · 服務設計</span></span>
+          </div>
+        </div>
+      </button>
     </div>
   </div>
   <footer>
@@ -400,8 +426,6 @@ footer span{font-size:12px;color:var(--ink3)}
     </div>
   </footer>
 </div>
-
-<!-- ══════════ ABOUT ══════════ -->
 <div class="page" id="page-about">
   <div class="about-wrap">
     <p class="about-label"><span data-en>About</span><span data-zh>關於我</span></p>
@@ -487,7 +511,7 @@ footer span{font-size:12px;color:var(--ink3)}
 <div class="cs-subnav visible" id="subnav-cs1">
   <button onclick="goto('home')"><span data-en>← All work</span><span data-zh>← 回到作品集</span></button>
   <span class="cs-subnav-title"><span data-en>Case 01 — UX Flow Research</span><span data-zh>案例01 — UX流程研究</span></span>
-  <button onclick="goto('cs3')"><span data-en>Case 02 →</span><span data-zh>案例02 →</span></button>
+  <button onclick="goto('cs2')"><span data-en>Case 02 →</span><span data-zh>案例02 →</span></button>
 </div>
   <div class="cs-hero">
     <p class="cs-num">Case 01 · iOGYM · UX Research · 2024–Now</p>
@@ -617,6 +641,21 @@ footer span{font-size:12px;color:var(--ink3)}
   </div>
 
   <div class="cs-section">
+    <p class="cs-section-title"><span data-en>From insight to decision</span><span data-zh>從洞察到決策</span></p>
+    <div style="border:2px dashed var(--border);border-radius:10px;padding:32px 28px;background:var(--bg2)">
+      <p style="font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px"><span data-en>Section to write</span><span data-zh>待補章節</span></p>
+      <p style="font-size:16px;font-weight:500;color:var(--ink);margin-bottom:12px"><span data-en>How did you get people to believe it?</span><span data-zh>你是怎麼讓人相信這個發現的？</span></p>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.8;margin-bottom:20px"><span data-en>You found the real problem. Stakeholders thought it was sensors. But what actually happened next? Who did you bring this to? What was the reaction? Did anyone push back? What did you do with that? How did the product direction visibly change as a result of this research — and what did that feel like to navigate?</span><span data-zh>你找到了真正的問題，但利害關係人認為是感應器。接下來呢？你把這個發現帶去給誰？他們的反應是什麼？有人反對嗎？你怎麼處理那個阻力？研究之後產品方向具體改變了什麼——那個過程是什麼感受？</span></p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Stakeholder communication</span><span data-zh>利害關係人溝通</span></span>
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Research advocacy</span><span data-zh>研究倡議</span></span>
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Decision-making process</span><span data-zh>決策過程</span></span>
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Before / after product behaviour</span><span data-zh>產品行為的前後對比</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
     <p class="cs-section-title"><span data-en>Design decisions</span><span data-zh>設計決策</span></p>
     <div class="two-col">
       <div class="card">
@@ -674,7 +713,7 @@ footer span{font-size:12px;color:var(--ink3)}
   </div>
   <div class="cs-nav">
     <button onclick="goto('home')"><span data-en>← All work</span><span data-zh>← 回到作品集</span></button>
-    <button onclick="goto('cs2')"><span data-en>Case 02: Retention →</span><span data-zh>案例02：留客研究 →</span></button>
+    <button onclick="goto('cs2')"><span data-en>Case 02: Visual Design →</span><span data-zh>案例02：視覺設計 →</span></button>
   </div>
   <footer>
     <span>© Chao Huang 黃雅超 · 2026</span>
@@ -687,9 +726,9 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <!-- ══════════ CASE STUDY 02 ══════════ -->
-<div class="page" id="page-cs2" style="padding-bottom:64px">
-<div class="cs-subnav visible" id="subnav-cs2">
-  <button onclick="goto('cs3')"><span data-en>← Case 02</span><span data-zh>← 案例02</span></button>
+<div class="page" id="page-cs3" style="padding-bottom:64px">
+<div class="cs-subnav visible" id="subnav-cs3">
+  <button onclick="goto('cs2')"><span data-en>← Case 02</span><span data-zh>← 案例02</span></button>
   <span class="cs-subnav-title"><span data-en>Case 03 — B2B Retention Research</span><span data-zh>案例03 — B2B留客研究</span></span>
   <button onclick="goto('home')"><span data-en>All work →</span><span data-zh>回到作品集 →</span></button>
 </div>
@@ -931,10 +970,42 @@ footer span{font-size:12px;color:var(--ink3)}
   </div>
 
   <div class="cs-section">
+    <p class="cs-section-title"><span data-en>Prioritisation framework</span><span data-zh>優先序框架</span></p>
+    <div style="border:2px dashed var(--border);border-radius:10px;padding:32px 28px;background:var(--bg2)">
+      <p style="font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px"><span data-en>Section to write</span><span data-zh>待補章節</span></p>
+      <p style="font-size:16px;font-weight:500;color:var(--ink);margin-bottom:12px"><span data-en>If you were shaping the roadmap — what would you actually build first, and why?</span><span data-zh>如果是你來排產品路線圖，你會先做什麼？為什麼？</span></p>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.8;margin-bottom:20px"><span data-en>This is the product strategy layer. Not just what the research found, but how you'd translate findings into sequenced decisions. What are the quick wins for gym partners? What requires deeper investment? What should be built in year one vs year two? What would you deprioritise — and what's the reasoning you'd use to defend that to a product team or investor?</span><span data-zh>這是產品策略的層次。不只是研究發現了什麼，而是你會如何把洞察轉化成有順序的決策。哪些對健身房夥伴來說是快速獲益的？哪些需要更深的投入？第一年vs第二年各做什麼？你會把什麼排後面——以及你會用什麼邏輯向產品團隊或投資者說明？</span></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px">
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px">
+          <p style="font-size:11px;letter-spacing:0.8px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px"><span data-en>Quick wins (0–3 months)</span><span data-zh>快速獲益（0–3個月）</span></p>
+          <p style="font-size:13px;color:var(--ink3);font-style:italic"><span data-en>[ to fill in ]</span><span data-zh>[ 待填入 ]</span></p>
+        </div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px">
+          <p style="font-size:11px;letter-spacing:0.8px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px"><span data-en>Core build (3–9 months)</span><span data-zh>核心建設（3–9個月）</span></p>
+          <p style="font-size:13px;color:var(--ink3);font-style:italic"><span data-en>[ to fill in ]</span><span data-zh>[ 待填入 ]</span></p>
+        </div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px">
+          <p style="font-size:11px;letter-spacing:0.8px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px"><span data-en>Longer term (9–18 months)</span><span data-zh>中長期（9–18個月）</span></p>
+          <p style="font-size:13px;color:var(--ink3);font-style:italic"><span data-en>[ to fill in ]</span><span data-zh>[ 待填入 ]</span></p>
+        </div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px">
+          <p style="font-size:11px;letter-spacing:0.8px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px"><span data-en>Intentionally deprioritised</span><span data-zh>刻意排後面的</span></p>
+          <p style="font-size:13px;color:var(--ink3);font-style:italic"><span data-en>[ to fill in ]</span><span data-zh>[ 待填入 ]</span></p>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Product roadmap</span><span data-zh>產品路線圖</span></span>
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Trade-off reasoning</span><span data-zh>取捨邏輯</span></span>
+        <span style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:5px 12px;font-size:12px;color:var(--ink3)"><span data-en>Business impact framing</span><span data-zh>商業影響框架</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
     <p class="cs-section-title"><span data-en>Reflection</span><span data-zh>反思</span></p>
     <div class="reflection">
       <p>
-        <span data-en>This research reframed the entire product strategy. The original product tracked individual exercise data, but the real customer is the gym, not the member. The new direction: help gyms predict churn and intervene at the right moment, for the right member, in the right way. Like Netflix recommending what to watch next, or Spotify's Discover Weekly, anticipating needs before they're expressed. The hardest insight was restraint: knowing when NOT to intervene matters just as much as knowing when to act.</span>
+        <span data-en>The original product tracked individual exercise data, but the real customer is the gym, not the member. The new direction: help gyms predict churn and intervene at the right moment, for the right member, in the right way. Like Netflix recommending what to watch next, or Spotify's Discover Weekly, anticipating needs before they're expressed. The hardest insight was restraint: knowing when NOT to intervene matters just as much as knowing when to act.</span>
         <span data-zh>這項研究從根本上重新定義了產品策略。原本的產品追蹤個人運動數據，但真正的客戶是健身房，不是會員。新方向：幫助健身房預測流失風險，在正確的時機、對正確的會員、以正確的方式介入。就像Netflix推薦你接下來想看什麼，或是Spotify的發現週報，在需求被表達之前就預測到它。最難的洞察是克制：知道何時不介入，和知道何時介入同樣重要。</span>
       </p>
     </div>
@@ -967,8 +1038,8 @@ footer span{font-size:12px;color:var(--ink3)}
   </div>
 
   <div class="cs-nav">
-    <button onclick="goto('cs1')"><span data-en>← Case 01: UX Flow</span><span data-zh>← 案例01：UX流程</span></button>
-    <button onclick="goto('cs3')"><span data-en>Case 03: Visual Design →</span><span data-zh>案例03：視覺設計 →</span></button>
+    <button onclick="goto('cs2')"><span data-en>← Case 02: Visual Design</span><span data-zh>← 案例02：視覺設計</span></button>
+    <button onclick="goto('home')"><span data-en>All work →</span><span data-zh>回到作品集 →</span></button>
   </div>
   <footer>
     <span>© Chao Huang 黃雅超 · 2026</span>
@@ -981,11 +1052,11 @@ footer span{font-size:12px;color:var(--ink3)}
 </div>
 
 <!-- ══════════ VISUAL DESIGN ══════════ -->
-<div class="page" id="page-cs3" style="padding-bottom:64px">
-<div class="cs-subnav visible" id="subnav-cs3">
+<div class="page" id="page-cs2" style="padding-bottom:64px">
+<div class="cs-subnav visible" id="subnav-cs2">
   <button onclick="goto('cs1')"><span data-en>← Case 01</span><span data-zh>← 案例01</span></button>
   <span class="cs-subnav-title"><span data-en>Case 02 — Visual Design</span><span data-zh>案例02 — 視覺設計</span></span>
-  <button onclick="goto('cs2')"><span data-en>Case 03 →</span><span data-zh>案例03 →</span></button>
+  <button onclick="goto('cs3')"><span data-en>Case 03 →</span><span data-zh>案例03 →</span></button>
 </div>
   <div class="cs-hero">
     <p class="cs-num"><span data-en>Case 02 · Visual Design · iOGYM · 2024–Now</span><span data-zh>案例02 · 視覺設計 · iOGYM · 2024至今</span></p>
@@ -1157,8 +1228,8 @@ footer span{font-size:12px;color:var(--ink3)}
   </div>
 
   <div class="cs-nav">
-    <button onclick="goto('cs2')"><span data-en>← Case 02: Retention</span><span data-zh>← 案例02：留客研究</span></button>
-    <button onclick="goto('home')"><span data-en>← All work</span><span data-zh>回到作品集 →</span></button>
+    <button onclick="goto('cs1')"><span data-en>← Case 01: UX Flow</span><span data-zh>← 案例01：UX流程</span></button>
+    <button onclick="goto('cs3')"><span data-en>Case 03: B2B Strategy →</span><span data-zh>案例03：B2B策略 →</span></button>
   </div>
   <footer>
     <span>© Chao Huang 黃雅超 · 2026</span>
